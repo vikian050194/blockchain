@@ -1,9 +1,11 @@
 from web3 import Web3
-from solc import compile_source
+from solc import compile_source, get_solc_version
 import random
 import os
 
 solc_path = os.environ.get('SOLC_BINARY', 'solc')
+print(solc_path)
+print(get_solc_version())
 
 def compile_contract(contract_source_file, contractName=None):
     """

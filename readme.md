@@ -1,5 +1,13 @@
 ```
-python3 -m solc.install v0.4.25
+npm i
+```
+
+```
+./node_modules/ganache-cli/cli.js
+```
+
+```
+python -m solc.install v0.4.25
 ```
 
 ```
