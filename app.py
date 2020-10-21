@@ -1,11 +1,7 @@
 from web3 import Web3
-from solc import compile_source, get_solc_version
+from solcx import compile_source
 import random
 import os
-
-solc_path = os.environ.get('SOLC_BINARY', 'solc')
-print(solc_path)
-print(get_solc_version())
 
 def compile_contract(contract_source_file, contractName=None):
     """
@@ -56,7 +52,7 @@ def exec_contract(acct, nonce, func):
 RPC_ADDRESS = 'http://localhost:8545'
 CONTRACT_SOL = 'storage.sol'
 CONTRACT_NAME = 'SimpleStorage'
-PRIVATE_KEY = 'paste_your_private_key_here'
+PRIVATE_KEY = 0xab5d072795c018280bc9824bab26935b542d75d4627a1c19e14d43559917163f #'paste_your_private_key_here'
 
 # instantiate web3 object
 w3 = Web3(Web3.HTTPProvider(RPC_ADDRESS, request_kwargs={'timeout': 120})) 
