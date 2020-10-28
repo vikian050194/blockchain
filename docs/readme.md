@@ -1,18 +1,19 @@
-```
-npm i
-./node_modules/ganache-cli/cli.js
-```
+Ссылки:
 
+GitHub [Solidity](https://github.com/ethereum/solidity)
 
+[Дока](https://solidity.readthedocs.io/en/latest/index.html) по `Solidity`
 
-```
-virtualenv -p python3.8.5 venv\
-source venv/bin/activate
-pip install -r requirements.txt
-python -m solcx.install_solc
-```
+GitHub [pu-solc](https://github.com/ethereum/py-solc)
 
-```
-sudo ln -s $HOME/.solcx/solc-v0.7.4 /usr/local/bin/solc
-sudo rm /usr/local/bin/solc
-```
+Хороший [пример](https://yohanes.gultom.id/2018/11/28/compiling-deploying-and-calling-ethereum-smartcontract-using-python/) работы с `py-solc` - использован в `src/app.py`
+
+GitHub [pu-solc-x](https://github.com/iamdefinitelyahuman/py-solc-x)
+
+[Дока](https://solcx.readthedocs.io/en/latest/index.html) по `py-solc-x` 
+
+GitHub [brownie](https://github.com/eth-brownie/brownie)
+
+[Дока](https://eth-brownie.readthedocs.io/en/latest/index.html) по `brownie`
+
+[Хабр](https://habr.com/ru/post/509618/) про `brownie`

@@ -3,6 +3,16 @@ from solcx import compile_source
 import random
 import os
 
+# def signTransaction(data):
+#     return w3.eth.signTransaction(dict(
+#         nonce=w3.eth.getTransactionCount(w3.eth.coinbase),
+#         gasPrice=w3.eth.gasPrice,
+#         gas=100000,
+#         to=acct.address,
+#         value=1,
+#         data=data,
+#         ))
+
 def compile_contract(contract_source_file, contractName=None):
     """
     Reads file, compiles, returns contract name and interface
@@ -47,18 +57,33 @@ def exec_contract(acct, nonce, func):
     tx_hash = w3.eth.sendRawTransaction(signed.rawTransaction)
     return tx_hash.hex()
 
-
 # config
 RPC_ADDRESS = 'http://localhost:8545'
-CONTRACT_SOL = 'storage.sol'
+CONTRACT_SOL = 'contracts/storage.sol'
 CONTRACT_NAME = 'SimpleStorage'
-PRIVATE_KEY = 0xab5d072795c018280bc9824bab26935b542d75d4627a1c19e14d43559917163f #'paste_your_private_key_here'
+PRIVATE_KEY = os.environ.get('PRIVATE_KEY')
 
 # instantiate web3 object
 w3 = Web3(Web3.HTTPProvider(RPC_ADDRESS, request_kwargs={'timeout': 120})) 
+# w3 = Web3(Web3.EthereumTesterProvider())
 
-# w3.eth.defaultAccount = w3.eth.accounts[0]
 acct = w3.eth.account.privateKeyToAccount(PRIVATE_KEY)
+
+# class Account():
+#     def __init__(self, address):
+#         self.address = address
+#     def signTransaction(self, tx):
+#         return w3.eth.signTransaction(dict(
+#             nonce=w3.eth.getTransactionCount(w3.eth.coinbase),
+#             gasPrice=w3.eth.gasPrice,
+#             gas=100000,
+#             to=self.address,
+#             value=1,
+#             data=tx['data'],
+#         ))
+
+# acct = Account(w3.eth.accounts[0])
+# w3.eth.defaultAccount = w3.eth.accounts[0]
 
 # compile contract to get abi
 print('Compiling contract..')
