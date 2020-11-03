@@ -2,13 +2,15 @@ from web3 import Web3
 
 w3 = Web3(Web3.EthereumTesterProvider())
 
-isConnected = w3.isConnected()
+assert w3.isConnected() == True
 
 wei = w3.toWei(42, 'ether')
 
-accounts = w3.eth.accounts
+block = w3.eth.getBlock('latest')
 
-[aliceAccount, bobAccount, *_] = accounts
+assert len(w3.eth.accounts) == 10
+
+[aliceAccount, bobAccount, *_] = w3.eth.accounts
 
 aliceBalanceBefore = w3.eth.getBalance(aliceAccount)
 bobBalanceBefore = w3.eth.getBalance(bobAccount)

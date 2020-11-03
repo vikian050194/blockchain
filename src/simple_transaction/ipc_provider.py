@@ -8,13 +8,13 @@ RPC_ADDRESS = 'data/geth.ipc'
 w3 = Web3(Web3.IPCProvider(RPC_ADDRESS))
 
 # ALICE_PRIVATE_KEY = os.environ.get('ALICE_PRIVATE_KEY')
-ALICE_PRIVATE_KEY_FILE='data/keystore/UTC--2020-11-02T11-29-57.432282277Z--62ea0942b95606a169e5050cb900ab10685555d1'
+ALICE_PRIVATE_KEY_FILE='data/keystore/UTC--2020-11-03T07-03-07.804121564Z--3ae17dec4006a5033cc5087b060eedfa3f8c76c0'
 with open(ALICE_PRIVATE_KEY_FILE) as keyfile:
    encrypted_key = keyfile.read()
    ALICE_PRIVATE_KEY = w3.eth.account.decrypt(encrypted_key, '1234')
 
 # BOB_PRIVATE_KEY = os.environ.get('BOB_PRIVATE_KEY')
-BOB_PRIVATE_KEY_FILE='data/keystore/UTC--2020-11-02T11-30-04.097212248Z--2375dbea117fd36b1b5464119c61e065b8b7bd9f'
+BOB_PRIVATE_KEY_FILE='data/keystore/UTC--2020-11-03T07-06-18.204973254Z--6acdf5fbb459bb42df8c29e17b59de0ef84bc559'
 with open(BOB_PRIVATE_KEY_FILE) as keyfile:
    encrypted_key = keyfile.read()
    BOB_PRIVATE_KEY = w3.eth.account.decrypt(encrypted_key, '1234')

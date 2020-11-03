@@ -42,7 +42,7 @@ geth --datadir=data --rpcapi=eth,net,web3,personal --mine --miner.threads=1 --ma
 ```
 Или так
 ```
-geth --datadir=data --mine --miner.threads=1 --maxpeers=0 --nodiscover --verbosity=4 --unlock=0x62EA0942B95606A169e5050Cb900AB10685555d1 2>geth.log
+geth --datadir=data --mine --miner.threads=1 --maxpeers=0 --nodiscover --verbosity=4 --unlock=0x3AE17DEC4006A5033Cc5087b060EEdFA3F8c76c0 2>geth.log
 ```
 Снести базу данных Эфириума
 ```
