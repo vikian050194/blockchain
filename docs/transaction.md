@@ -28,25 +28,18 @@ geth account list --datadir=data
 ```
 geth init --datadir=data genesis.json
 ```
-И запустить ноду
-```
-geth --datadir=data --http --verbosity=5 --miner.threads=1 --maxpeers=0 --nodiscover
-```
-Разблокировать аккаунт после запуска ноды
-```
-geth --exec "personal.unlockAccount(eth.accounts[0], '1234')" attach ipc:data/geth.ipc
-```
-Запустить можно ещё так
-```
-geth --datadir=data --rpcapi=eth,net,web3,personal --mine --miner.threads=1 --maxpeers=0 --nodiscover --verbosity=5 --unlock=0x62EA0942B95606A169e5050Cb900AB10685555d1 2>geth.log
-```
-Или так
-```
-geth --datadir=data --mine --miner.threads=1 --maxpeers=0 --nodiscover --verbosity=4 --unlock=0x3AE17DEC4006A5033Cc5087b060EEdFA3F8c76c0 2>geth.log
-```
 Снести базу данных Эфириума
 ```
 geth removedb --datadir=data
+```
+Запустить клиента майнить блоки, писать логи в файл и разблокировать аккаунт
+```
+geth --datadir=data --mine --miner.threads=1 --maxpeers=0 --nodiscover --verbosity=4 --unlock=0x0000000000000000000000000000000000000000 2>geth.log
+```
+
+Разблокировать аккаунт после запуска ноды
+```
+geth --exec "personal.unlockAccount(eth.accounts[0], '1234')" attach ipc:data/geth.ipc
 ```
 Кстати
 ```

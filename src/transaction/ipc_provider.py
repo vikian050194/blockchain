@@ -8,13 +8,13 @@ RPC_ADDRESS = 'data/geth.ipc'
 w3 = Web3(Web3.IPCProvider(RPC_ADDRESS))
 
 # ALICE_PRIVATE_KEY = os.environ.get('ALICE_PRIVATE_KEY')
-ALICE_PRIVATE_KEY_FILE='data/keystore/UTC--2020-11-03T07-03-07.804121564Z--3ae17dec4006a5033cc5087b060eedfa3f8c76c0'
+ALICE_PRIVATE_KEY_FILE='data/keystore/UTC--2020-11-03T07-47-44.156921182Z--4261615f91055c19e3d09f2584b47baf1fd58313'
 with open(ALICE_PRIVATE_KEY_FILE) as keyfile:
    encrypted_key = keyfile.read()
    ALICE_PRIVATE_KEY = w3.eth.account.decrypt(encrypted_key, '1234')
 
 # BOB_PRIVATE_KEY = os.environ.get('BOB_PRIVATE_KEY')
-BOB_PRIVATE_KEY_FILE='data/keystore/UTC--2020-11-03T07-06-18.204973254Z--6acdf5fbb459bb42df8c29e17b59de0ef84bc559'
+BOB_PRIVATE_KEY_FILE='data/keystore/UTC--2020-11-03T07-47-52.900024617Z--07358db463ca9449185d75040d8258d9ab564442'
 with open(BOB_PRIVATE_KEY_FILE) as keyfile:
    encrypted_key = keyfile.read()
    BOB_PRIVATE_KEY = w3.eth.account.decrypt(encrypted_key, '1234')
@@ -23,10 +23,15 @@ assert w3.isConnected() == True
 
 block = w3.eth.getBlock('latest')
 
-assert len(w3.eth.accounts) == 2
+assert len(w3.eth.accounts) == 3
 
 aliceAccount = w3.eth.account.privateKeyToAccount(ALICE_PRIVATE_KEY)
 bobAccount = w3.eth.account.privateKeyToAccount(BOB_PRIVATE_KEY)
+
+# [alice, bob, *_] = w3.eth.accounts 
+
+# aliceBalance = w3.eth.getBalance(alice)
+# bobBalance = w3.eth.getBalance(bob)
 
 aliceBalance = w3.eth.getBalance(aliceAccount.address)
 bobBalance = w3.eth.getBalance(bobAccount.address)
