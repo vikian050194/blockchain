@@ -3,23 +3,13 @@ from solcx import compile_source
 import random
 import os
 
-# def signTransaction(data):
-#     return w3.eth.signTransaction(dict(
-#         nonce=w3.eth.getTransactionCount(w3.eth.coinbase),
-#         gasPrice=w3.eth.gasPrice,
-#         gas=100000,
-#         to=acct.address,
-#         value=1,
-#         data=data,
-#         ))
-
 def compile_contract(contract_source_file, contractName=None):
     """
     Reads file, compiles, returns contract name and interface
     """
     with open(contract_source_file, "r") as f:
         contract_source_code = f.read()
-    compiled_sol = compile_source(contract_source_code) # Compiled source code
+    compiled_sol = compile_source(contract_source_code)
     if not contractName:
         contractName = list(compiled_sol.keys())[0]
         contract_interface = compiled_sol[contractName]
@@ -65,25 +55,12 @@ PRIVATE_KEY = os.environ.get('PRIVATE_KEY')
 
 # instantiate web3 object
 w3 = Web3(Web3.HTTPProvider(RPC_ADDRESS, request_kwargs={'timeout': 120})) 
-# w3 = Web3(Web3.EthereumTesterProvider())
+
+assert w3.isConnected() == True
+
+# w3.eth.defaultAccount = w3.eth.accounts[0]
 
 acct = w3.eth.account.privateKeyToAccount(PRIVATE_KEY)
-
-# class Account():
-#     def __init__(self, address):
-#         self.address = address
-#     def signTransaction(self, tx):
-#         return w3.eth.signTransaction(dict(
-#             nonce=w3.eth.getTransactionCount(w3.eth.coinbase),
-#             gasPrice=w3.eth.gasPrice,
-#             gas=100000,
-#             to=self.address,
-#             value=1,
-#             data=tx['data'],
-#         ))
-
-# acct = Account(w3.eth.accounts[0])
-# w3.eth.defaultAccount = w3.eth.accounts[0]
 
 # compile contract to get abi
 print('Compiling contract..')
