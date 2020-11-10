@@ -8,15 +8,14 @@ assert w3.isConnected() == True
 
 block = w3.eth.getBlock('latest')
 
-assert len(w3.eth.accounts) == 2
+assert len(w3.eth.accounts) == 3
 
-[aliceAccount, bobAccount] = w3.eth.accounts
+[aliceAccount, bobAccount, evaAccount] = w3.eth.accounts
 
-aliceBalance = w3.eth.getBalance(aliceAccount)
-bobBalance = w3.eth.getBalance(bobAccount)
+aliceBalanceBefore = w3.eth.getBalance(aliceAccount)
+bobBalanceBefore = w3.eth.getBalance(bobAccount)
 
-aliceBalance = w3.eth.getBalance(aliceAccount)
-bobBalance = w3.eth.getBalance(bobAccount)
+value = 1000
 
 tx_hash = w3.eth.sendTransaction({
    'from': aliceAccount,
@@ -26,10 +25,11 @@ tx_hash = w3.eth.sendTransaction({
 
 tx = w3.eth.getTransaction(tx_hash)
 
-aliceBalance = w3.eth.getBalance(aliceAccount)
-bobBalance = w3.eth.getBalance(bobAccount)
+aliceBalanceAfter = w3.eth.getBalance(aliceAccount)
+bobBalanceAfter = w3.eth.getBalance(bobAccount)
 
-fee = 21000
+fee = 121000 * 100000000000000
+assert bobBalanceBefore == bobBalanceAfter - value
+assert aliceBalanceBefore == aliceBalanceAfter + value + fee
 
-assert aliceBalanceBefore == aliceBalanceAfter + wei + fee
-assert bobBalanceBefore == bobBalanceAfter - wei
+print("end")
