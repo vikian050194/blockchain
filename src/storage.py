@@ -48,15 +48,23 @@ def exec_contract(acct, nonce, func):
     return tx_hash.hex()
 
 # config
-RPC_ADDRESS = 'http://localhost:8545'
+# RPC_ADDRESS = 'http://localhost:8545'
 CONTRACT_SOL = 'contracts/storage.sol'
 CONTRACT_NAME = 'SimpleStorage'
-PRIVATE_KEY = os.environ.get('PRIVATE_KEY')
+# PRIVATE_KEY = os.environ.get('PRIVATE_KEY')
 
 # instantiate web3 object
-w3 = Web3(Web3.HTTPProvider(RPC_ADDRESS, request_kwargs={'timeout': 120})) 
+# w3 = Web3(Web3.HTTPProvider(RPC_ADDRESS, request_kwargs={'timeout': 120}))
+
+RPC_ADDRESS = 'data/geth.ipc'
+w3 = Web3(Web3.IPCProvider(RPC_ADDRESS))
 
 assert w3.isConnected() == True
+
+PRIVATE_KEY_FILE='data/keystore/UTC--2020-11-10T06-25-30.054940686Z--cc2e661e340ab3df7bf899b588389a4ac140cffd'
+with open(PRIVATE_KEY_FILE) as keyfile:
+   encrypted_key = keyfile.read()
+   PRIVATE_KEY = w3.eth.account.decrypt(encrypted_key, '1234')
 
 # w3.eth.defaultAccount = w3.eth.accounts[0]
 
