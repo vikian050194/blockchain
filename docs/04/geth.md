@@ -1,8 +1,8 @@
 ## Geth
 
-[Документация](https://ethdocs.org/en/latest/ethereum-clients/choosing-a-client.html) по всем клиентам Эфириума.
-
 [Документация](https://geth.ethereum.org/) по Geth
+
+[Medium](https://medium.com/@chim/ethereum-how-to-setup-a-local-test-node-with-initial-ether-balance-using-geth-974511ce712)
 
 ### Установка
 
@@ -50,9 +50,13 @@ geth init --datadir=data genesis.json
 ```
 geth removedb --datadir=data
 ```
+Подключение к уже запущенной ноде
+```
+geth attach data/geth.ipc
+```
 Запуск клиента, майнящего блоки на CPU в один поток
 ```
-geth --datadir=data --mine --miner.threads=1 --maxpeers=0 --nodiscover --verbosity=4
+geth --datadir=data --mine --miner.threads=1 --nodiscover --verbosity=4
 ```
 Для разблокировки аккаунта (или даже аккаунтов, для этого их можно перечислить через запятую) при запуске, надо добавить
 ```

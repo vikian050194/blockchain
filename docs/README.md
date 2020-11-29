@@ -17,7 +17,8 @@
 
 **Занятие #2**
 
-- TODO Пример [транзакции](02/transaction.md) на тестовом провайдере
+- Полезный вспомогательный [класс](02/wrapper.md)
+- Пример [транзакции](02/transaction.md) на тестовом провайдере
 - TODO [Gas](02/gas.md) и прочее
 
 **Занятие #3**
@@ -31,7 +32,7 @@
 **Занятие #4**
 
 - TODO [Клиенты](04/client.md) Etherium сети
-- Гошный клиент [Geth](04/geth.md)
+- Клиент [Geth](04/geth.md)
 - TODO [Транзакция](04/transaction.md) на IPC провайдере
 - Компилятор [solc](04/solc.md)
 - TODO [Storage](04/storage.md)
@@ -39,11 +40,10 @@
 
 **Занятие #5**
 
-- TODO PoW, PoS и PoA
-- TODO Сети бывают [разные](05/net.md)
-- TODO [Тестовая](05/testnet.md) сеть из нескольких узлов
-- TODO [Транзакция](05/transaction.md) и тестовая сеть
-- TODO [Storage](05/storage.md) в тестовая сеть
+- TODO Сети бывают [разные](05/proof.md): PoW, PoS и PoA
+- [Тестовая](05/testnet.md) сеть из нескольких узлов
+- [Транзакция](05/transaction.md) и тестовая сеть
+- [Storage](05/storage.md) и тестовая сеть
 
 **Занятие #6**
 
@@ -53,4 +53,6 @@
 
 **Заметки**
 
-- genesis: clique & ethash
+WARN Block sealing failed err="unauthorized signer"
+clique.getSigners()
+clique.propose(<node_id>, true)
