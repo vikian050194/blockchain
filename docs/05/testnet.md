@@ -1,13 +1,25 @@
 ## Тестовая сеть из нескольких узлов
 
-Вот ссылки на [три](https://www.c-sharpcorner.com/article/setup-your-private-ethereum-network-with-geth2/) [толковые](https://medium.com/coinmonks/private-ethereum-by-example-b77063bb634f) [статьи](https://habr.com/ru/post/481052/), на основе которых написана эта cтраница. Правда, они уже устарели и авторы сразу предлагают использовать контейнеры, поэтому материал переработан и актуализирован (на момент написания).
+Вот ссылки на [три](https://www.c-sharpcorner.com/article/setup-your-private-ethereum-network-with-geth2/) [нормальные](https://medium.com/coinmonks/private-ethereum-by-example-b77063bb634f) [статьи](https://habr.com/ru/post/481052/), на основе которых написана эта cтраница. Правда, они уже устарели и авторы сразу предлагают использовать контейнеры, поэтому материал переработан и актуализирован (на момент написания).
 
 Итак, для начала убедимся, что у нас есть файл `password`. В нём находится пароль от всех аккаунтов на всех клиентах, которые мы будем создавать.
+```
+cat password
+```
 
 Создадим две папки
+
 ```
 mkdir node1 node2
+
 ```
+
+Создадим ссылки на `password`
+
+```
+ln password node1/
+```
+
 В каждой из них создадим по одному аккаунту
 ```
 geth account new --datadir=node1 --password=password
@@ -152,13 +164,19 @@ index 93f2e4c..b328421 100644
 geth --datadir=node1 init genesis.json
 geth --datadir=node2 init genesis.json
 ```
+
 Создадим файл `command`, в который запишем `bash` скрипт для запуска клиента
+
+> touch node1/command node2/command
+
 ```
-geth --nousb --datadir=$pwd --syncmode=full --port=30310 --miner.gasprice=0 --miner.gastarget=470000000000 --http --http.addr=localhost --http.port=8545 --http.api admin,eth,miner,net,txpool,personal,web3 --mine --allow-insecure-unlock --unlock=0x0000000000000000000000000000000000000001 --password=../password --nodiscover --verbosity=4 console 2>geth.log
+geth --nousb --datadir=$pwd --syncmode=full --port=30310 --miner.gasprice=0 --miner.gastarget=470000000000 --http --http.addr=localhost --http.port=8545 --http.api admin,eth,miner,net,txpool,personal,web3 --mine --allow-insecure-unlock --unlock=0x0000000000000000000000000000000000000001 --password=password --nodiscover --verbosity=4 console 2>geth.log
 ```
+
 И для второго
+
 ```
-geth --nousb --datadir=$pwd --syncmode=full --port=30311 --miner.gasprice=0 --miner.gastarget=470000000000 --http --http.addr=localhost --http.port=8546 --http.api admin,eth,miner,net,txpool,personal,web3 --mine --allow-insecure-unlock --unlock=0x0000000000000000000000000000000000000002 --password=../password --nodiscover --verbosity=4 console 2>geth.log
+geth --nousb --datadir=$pwd --syncmode=full --port=30311 --miner.gasprice=0 --miner.gastarget=470000000000 --http --http.addr=localhost --http.port=8546 --http.api admin,eth,miner,net,txpool,personal,web3 --mine --allow-insecure-unlock --unlock=0x0000000000000000000000000000000000000002 --password=password --nodiscover --verbosity=4 console 2>geth.log
 ```
 
 > Если хочется запустить "в фоновом режиме", то надо дописать перед всей командой `nohup` и удалить `console` из ключей. Но для того, чтобы воспользоваться консолью придётся делать `attach`.
@@ -176,25 +194,22 @@ at block: 0 (Sun Nov 29 2020 15:49:23 GMT+0300 (MSK))
 To exit, press ctrl-d
 > 
 ```
-В каждом из `log` файлов найдём строку с адресом. В ней есть такой текст `Started P2P networking`. А интересующее нас значение имеет вид
-```
-enode://что-то-там@127.0.0.1:30310
-```
-Приписка `?discport=0` видимо обусловлена использонием ключа `--nodiscover`.
 
-Прервём оба процесс по `Ctrl+D`. Нам необходимо создать конфигурационный файл, который будет содержать адреса пиров. Можно это сделать и в консоли, но во имя автоматизации делаем через файл.
-> Альтернативным способом является создание дампа конфигурации клиента. Для этого при запуске надо добавить ключ `dumpconfig`. Можно перенаправить вывод: `dumpconfig > config.toml`. Хотя там есть тонкости, связанные с тем статический или нет пир получается, инбаунд или нет.
+В каждой из консолей выполним две команды. Первая позволит получить список пиров (их не должно быть - пустой массив), а вторая - информацию о клиенте.
+
 ```
-touch config.toml
-```
-Структура файла слудующая
-```
-[Node.P2P]
-StaticNodes = ["enode://что-то-там@127.0.0.1:30310", "enode://что-тотам@127.0.0.1:30311", "enode://что-тотам@127.0.0.1:30312"]
+admin.peers
+admin.nodeInfo
 ```
 
-Для всех клиентов добавим в команду ключ
+Нас интересует значение `enode` второго клиента. Вызовем в консоли первого метод добавления пира
+
 ```
---config=../config.toml
+admin.addPeer("значение-enode-второго-клиента")
 ```
-Так или иначе получаем после запуска два (или если почему-то хочется или интересно, то более) клиента, которые знаю друг о друге.
+
+Ещё раз проверяем пиров - у каждого клиента должно было появиться по одному.
+
+Вуаля.
+
+Тестовая PoA сеть из двух узлов готова.

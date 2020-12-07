@@ -9,7 +9,7 @@ latest_block = w.get_block('latest')
 assert len(w.accounts) == 1
 
 [alice_account] = w.accounts
-bob_account = "0x2dbaf8ED297EDba8ec0565A4b7C0d601dbD29250"
+bob_account = "0xE77fA0F3ad4969F81b0B1210d67F68Fbf8203D90"
 
 alice_balance_before = w.get_balance(alice_account)
 bob_balance_before = w.get_balance(bob_account)

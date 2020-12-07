@@ -40,7 +40,8 @@
 
 **Занятие #5**
 
-- TODO Сети бывают [разные](05/proof.md): PoW, PoS и PoA
+- TODO [syncmode](05/sync.md)
+- TODO Сети бывают [разные](05/protocol.md): PoW, PoS и PoA
 - [Тестовая](05/testnet.md) сеть из нескольких узлов
 - [Транзакция](05/transaction.md) и тестовая сеть
 - [Storage](05/storage.md) и тестовая сеть
@@ -50,9 +51,3 @@
 - TODO [Майнинг](06/mining.md)
 - ??
 - ???
-
-**Заметки**
-
-WARN Block sealing failed err="unauthorized signer"
-clique.getSigners()
-clique.propose(<node_id>, true)

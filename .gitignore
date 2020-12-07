@@ -1,5 +1,7 @@
-data
+# Directories of nodes, like node1, node2 and so on
 node*
+
+*.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

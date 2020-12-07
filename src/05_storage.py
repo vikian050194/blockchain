@@ -14,7 +14,10 @@ latest_block = w.get_block('latest')
 CONTRACT_SOL = 'contracts/storage.sol'
 CONTRACT_NAME = 'SimpleStorage'
 
-PRIVATE_KEY_FILE='node1/keystore/что-то-там'
+path_to_first_node = 'node1/keystore'
+onlyfiles = [os.path.join(path_to_first_node, f) for f in os.listdir(path_to_first_node) if os.path.isfile(os.path.join(path_to_first_node, f))]
+
+PRIVATE_KEY_FILE=onlyfiles[0]
 with open(PRIVATE_KEY_FILE) as keyfile:
    encrypted_key = keyfile.read()
    
