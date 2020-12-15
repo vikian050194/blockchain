@@ -11,7 +11,6 @@ cat password
 
 ```
 mkdir node1 node2
-
 ```
 
 Создадим ссылки на `password`
@@ -89,6 +88,7 @@ How many seconds should blocks take? (default = 15)
 ```
 Which accounts are allowed to seal? (mandatory at least one)
 > 0x0000000000000000000000000000000000000001
+> 0x0000000000000000000000000000000000000002
 > 0x
 ```
 Укажем оба аккаунта, т.к. этот `genesis.json` будет использован для инициализации обоих клиентов
