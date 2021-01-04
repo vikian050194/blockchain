@@ -1,41 +1,33 @@
----
-title: How to run a light node with Geth
-description: How to download, install and run Geth. Covering syncmodes, the Javascript console, and more
-author: "Brian Gu"
-tags: ["clients", "geth", "nodes"]
-skill: intermediate
-lang: en
-sidebar: true
-published: 2020-06-14
----
 
-You may be interested in running an [Ethereum node](/developers/docs/nodes-and-clients/). One of the easiest ways to do so is by downloading, installing, and running Geth. With Geth, we can have a light node up and running in minutes.
+## Как запустить light node с помощью Geth
+Как скачать, установить и запустить Geth. Охватывает режимы синхронизации, консоль Javascript и многое другое. 
 
-First, you’ll want to [install Geth](https://github.com/ethereum/go-ethereum/wiki/Building-Ethereum).
+Один из самых простых способов сделать это - загрузить, установить и запустить Geth. С Geth мы можем настроить и запустить легкий узел за считанные минуты.
+Во-первых, вам нужно [Установить Geth](https://github.com/ethereum/go-ethereum/wiki/Building-Ethereum).
 
-Once you’ve installed Geth, running an Ethereum full node is as simple as typing
+После установки Geth запустить полный узел Ethereum так же просто, как ввести
 
 ```bash
 $ geth
 ```
 
-into the command line (without the dollar sign). Don’t do this just yet! When you run `geth`, Geth will:
+в командную строку (без знака доллара). Пока не делайте этого! Когда вы запустите `geth`, Geth:
 
-- Initialize a local copy of a blank-state EVM
-- Start downloading all blocks in Ethereum history, starting from block 0.
-- Replay all transactions in all blocks in order, updating the state of the EVM with each transaction until it reaches the present-day state.
+- Инициализировать локальную копию EVM с пустым состоянием
+- Начните загрузку всех блоков в истории Ethereum, начиная с блока 0.
+- Воспроизвести все транзакции во всех блоках по порядку, обновляя состояние EVM с каждой транзакцией, пока она не достигнет текущего состояния.
 
-This process may take anywhere from hours to days, and requires a few hundred GB of free space. For now, we’ll just run a light node on a testnet to familiarize ourselves with how to use Geth. To do this, we'll have to go through a few important command-line options and tools.
+Этот процесс может занять от нескольких часов до дней и требует нескольких сотен ГБ свободного места. А пока мы просто запустим легкий узел в тестовой сети, чтобы познакомиться с тем, как использовать Geth. Для этого нам нужно пройти через несколько важных параметров и инструментов командной строки.
 
-## Mainnet and Testnet {#mainnet-and-testnet}
+## Mainnet и Testnet 
 
-By default, Geth runs a mainnet node. You can run `geth --testnet` to run a Ropsten testnet full node. You can run a node on Rinkeby by swapping `testnet` for `rinkeby`.
+По умолчанию Geth запускает узел основной сети. Вы можете запустить geth --testnet для запуска полного узла тестовой сети Ropsten. Вы можете запустить узел на Rinkeby, заменив testnet на rinkeby.
 
-[Learn more about different networks](/developers/docs/networks/).
 
-## Syncmode {#syncmode}
 
-Geth has three `syncmode`s.
+## Syncmode 
+
+У Geth есть три `syncmode`s.
 
 ```bash
 $ geth --syncmode "full"
@@ -43,28 +35,28 @@ $ geth --syncmode "fast"
 $ geth --syncmode "light"
 ```
 
-`"full"` runs a full node exactly as you’d expect - your machine initializes a local copy of the EVM in its original clean state, downloads every block since the beginning of the blockchain, and executes every transaction in every block, updating the EVM state until it reaches the present-day EVM state.
+«full» запускает полный узел точно так, как вы ожидаете - ваша машина инициализирует локальную копию EVM в исходном чистом состоянии, загружает каждый блок с начала цепочки блоков и выполняет каждую транзакцию в каждом блоке, обновляя состояние EVM, пока не достигнет текущего состояния EVM.
 
-`"fast"` downloads all blocks, but also downloads a recent snapshot of the EVM state from a peer (currently the state of the EVM 64 blocks in the past), executing transactions in only the most recent blocks until it reaches the current EVM state. The advantage of `"fast"` is that it takes much less time to synchronize to the present state; however, it relies on a full archival node peer for a state snapshot, so it isn’t verifying everything for itself.
+"fast" загружает все блоки, но также загружает недавний снимок состояния EVM от однорангового узла (в настоящее время состояние блоков EVM 64 в прошлом), выполняя транзакции только в самых последних блоках, пока не достигнет текущего EVM штат. Преимущество «быстрого» состоит в том, что для синхронизации с текущим состоянием требуется гораздо меньше времени; тем не менее, он полагается на однорангового узла полного архивирования для моментального снимка состояния, поэтому он не проверяет все самостоятельно.
 
-Finally, `"light"` runs a light node, which we discussed above.
+Наконец, «light» запускает световой узел, о котором мы говорили выше.
 
-For a great explanation of the differences between the three syncmodes, see this [stack exchange answer](https://ethereum.stackexchange.com/questions/11297/what-is-geths-light-sync-and-why-is-it-so-fast).
+Подробное объяснение различий между тремя режимами синхронизации см. В этом [Ответ на обмен стеками](https://ethereum.stackexchange.com/questions/11297/what-is-geths-light-sync-and-why-is-it-so-fast).
 
-## Documentation and other command line options {#documentation-and-other-command-line-options}
+## Документация и другие параметры командной строки
 
-- [Full documentation](https://geth.ethereum.org/docs/)
-- [All command line options](https://geth.ethereum.org/docs/interface/command-line-options)
+- [Полная документация](https://geth.ethereum.org/docs/)
+- [Все параметры командной строки](https://geth.ethereum.org/docs/interface/command-line-options)
 
-## Running your light node {#running-your-light-node}
+## Запуск вашего light node
 
-We’ll run a light testnet node to familiarize ourselves with how to manage and interact with a node. To do so, simply run
+Мы запустим легкий узел тестовой сети, чтобы познакомиться с тем, как управлять узлом и взаимодействовать с ним. Для этого просто запустите
 
 ```bash
 $ geth --testnet --syncmode "light"
 ```
 
-Wait a few seconds, and hopefully you should get output that looks something like:
+Подождите несколько секунд, и, надеюсь, вы получите примерно такой результат:
 
 ```bash
 $ geth --testnet --syncmode "light"
@@ -96,9 +88,9 @@ INFO [11-18|14:09:00] Imported new block headers               count=192 elapsed
 INFO [11-18|14:09:00] Imported new block headers               count=192 elapsed=109.849ms number=3377791 hash=499f2d…e0c713 ignored=0
 ```
 
-Note: You may not see “Block synchronisation started” and the following “Imported new block headers” messages for several minutes, or even hours if you’re particularly unlucky. During this time, your client is trying to find full node peers willing to serve light clients. In the example above, we can tell by the timestamps that my machine had to wait about four minutes between starting to look for peers and actually finding a peer to download blocks from. This is currently an open issue within the Ethereum community - how do we incentivize people to run full nodes which serve light clients?
+Примечание. Вы можете не видеть сообщения «Синхронизация блока запущена» и следующие сообщения «Импортированы новые заголовки блоков» в течение нескольких минут или даже часов, если вам особенно не повезло. В это время ваш клиент пытается найти полнофункциональных узлов, готовых обслуживать легких клиентов. В приведенном выше примере по временным меткам мы можем сказать, что моей машине пришлось ждать около четырех минут между началом поиска одноранговых узлов и фактическим поиском однорангового узла для загрузки блоков. В настоящее время это открытый вопрос в сообществе Ethereum - как мы мотивируем людей запускать полные узлы, которые обслуживают легких клиентов?
 
-Once block synchronization starts, it’ll take a few minutes for your machine to catch up to the latest blocks on the blockchain. At that point, your output will start looking like:
+Когда начнется синхронизация блоков, вашему компьютеру потребуется несколько минут, чтобы догнать последние блоки в цепочке блоков. В этот момент ваш результат будет выглядеть так:
 
 ```bash
 INFO [11-18|16:06:04.025] Imported new block headers               count=2   elapsed=6.253ms   number=4456862 hash=ce0a0b…6ab128
@@ -108,50 +100,50 @@ INFO [11-18|16:06:45.464] Imported new block headers               count=2   ela
 INFO [11-18|16:07:11.630] Imported new block headers               count=2   elapsed=5.835ms   number=4456870 hash=67daa7…66892d
 ```
 
-At this point, messages will start coming in only every 10-30 seconds, and the value of `count` will be in the single digits for each message.
+На этом этапе сообщения будут приходить только каждые 10-30 секунд, а значение «count» будет выражаться в виде отдельных цифр для каждого сообщения.
 
-## Where is the blockchain and EVM data stored? {#where-is-the-blockchain-and-evm-data-stored}
+## Где хранятся данные блокчейна и EVM?
 
-The directory which Geth uses to store raw blockchain data depends on your operating system. Upon running Geth, look for a message that looks like
+Каталог, который Geth использует для хранения необработанных данных блокчейна, зависит от вашей операционной системы. После запуска Geth найдите сообщение, которое выглядит как
 
 ```bash
 INFO [11-18|14:04:47] Allocated cache and file handles         database=/Users/bgu/Library/Ethereum/testnet/geth/lightchaindata cache=768 handles=128
 ```
 
-The path following `“database=”` should tell you where the blockchain data is stored on your machine. If you’re running a full node, this directory will contain all of the data about every block that has ever been committed to the blockchain. Since we’re running a light node, this directory only contains the block headers.
+Путь, следующий за «database =» «, должен сообщить вам, где на вашем компьютере хранятся данные блокчейна. Если вы запускаете полный узел, этот каталог будет содержать все данные о каждом блоке, который когда-либо был зафиксирован в цепочке блоков. Поскольку у нас запущен легкий узел, этот каталог содержит только заголовки блоков.
 
-It’s worth emphasizing here that, at the lowest level, this is where the blockchain lives. The full contents of the blockchain and the EVM state are stored on every full node in the Ethereum network, in directories that look very much like the one on your computer.
+Здесь стоит подчеркнуть, что на самом низком уровне именно здесь живет блокчейн. Полное содержимое блокчейна и состояние EVM хранятся на каждом полном узле сети Ethereum в каталогах, которые очень похожи на каталог на вашем компьютере.
 
-## Attaching to the Javascript Console {#attaching-to-the-javascript-console}
+## Присоединение к консоли Javascript 
 
-Running a node isn’t useful unless we can actually interact with it. For example, we might want to broadcast transaction requests or look up EVM/blockchain data (such as an account balance). Geth has a built-in Javascript console and a Javascript API called [web3js](https://github.com/ethereum/web3.js/) that you can use to interact with your node.
+Запуск узла бесполезен, если мы действительно не можем с ним взаимодействовать. Например, мы можем захотеть транслировать запросы транзакций или искать данные EVM / блокчейн (например, баланс учетной записи). Geth имеет встроенную консоль Javascript и API Javascript под названием [web3js].(https://github.com/ethereum/web3.js/) который вы можете использовать для взаимодействия с вашим узлом.
 
-To use the Javascript console:
+Чтобы использовать консоль Javascript:
 
-1. Start running a node in a terminal window (either full and light node are OK).
-2. Look for a message that looks like:
+1. Запустите узел в окне терминала (подойдут как полный, так и светлый узел).
+2. Найдите сообщение следующего вида:
 
 ```bash
 INFO [11-18|14:04:49] IPC endpoint opened                      url=/Users/bgu/Library/Ethereum/testnet/geth.ipc
 ```
 
-This message should be logged before block synchronization starts.
+Это сообщение должно быть зарегистрировано до начала синхронизации блоков.
 
-3. This message indicates the path to the IPC (inter-process communication) endpoint. Copy this path (in the example above, it’s `/Users/bgu/Library/Ethereum/testnet/geth.ipc`).
-4. Open a new terminal window or tab, and run the following command:
+3. Это сообщение указывает путь к конечной точке IPC (межпроцессного взаимодействия). Скопируйте этот путь (в приведенном выше примере это `/Users/bgu/Library/Ethereum/testnet/geth.ipc`).
+4. Откройте новое окно или вкладку терминала и выполните следующую команду:
    `$ geth attach [your IPC endpoint path]`
 
-This should open the Javascript console. We can now use web3js to interact with the node.
+Это должно открыть консоль Javascript. Теперь мы можем использовать web3js для взаимодействия с узлом.
 
-[Full web3js documentation](http://web3js.readthedocs.io/)
+[Полная документация по web3js](http://web3js.readthedocs.io/)
 
-Here are a few helpful objects exposed by this API. You access these by typing them into the Javascript console.
+Вот несколько полезных объектов, предоставляемых этим API. Вы получаете доступ к ним, вводя их в консоль Javascript.
 
-- `eth.syncing` returns an object if your node has started but not completed block synchronization, or the value `false` if it has either completed synchronization or has not started. If the node is still synchronizing, `eth.syncing` will tell you the latest block number whose data you’ve received, as well as the total number of blocks in the current blockchain.
-- `net.peerCount` returns the number of peers you’re connected to. If this is 0, you’ll probably have to either wait a few minutes or else start Googling for solutions (could be a firewall or network issue, or something else).
-- `admin.peers` will give you a list of all peers that your node is connected to. If this is empty, then your node is not connected to any other peers.
+- `eth.syncing` возвращает объект, если ваш узел был запущен, но не завершил синхронизацию блока, или значение` false`, если он либо завершил синхронизацию, либо не был запущен. Если узел все еще синхронизируется, eth.syncing сообщит вам номер последнего блока, данные которого вы получили, а также общее количество блоков в текущей цепочке блоков.
+- `net.peerCount` возвращает количество пиров, к которым вы подключены. Если это 0, вам, вероятно, придется либо подождать несколько минут, либо начать поиск решений в Google (это может быть проблема с брандмауэром, сетью или что-то еще).
+- `admin.peers` предоставит вам список всех пиров, к которым подключен ваш узел. Если он пуст, значит, ваш узел не подключен ни к каким другим узлам.
 
-We can also use web3js to initialize accounts, write and broadcast transaction requests to the network, look up account balances and metadata, and more. We’ll cover these operations in a later section; for now, try running the following to look up the balance of one of my accounts on the Ropsten testnet:
+Мы также можем использовать web3js для инициализации учетных записей, записи и трансляции запросов транзакций в сеть, поиска остатков на счетах и ​​метаданных и т. Д. Мы рассмотрим эти операции в следующем разделе; А пока попробуйте выполнить следующее, чтобы узнать баланс одной из моих учетных записей в тестовой сети Ropsten:
 
 ```js
 eth.getBalance('0x85d918c2B7F172d033D190152AEc58709Fb6D048')
@@ -160,8 +152,8 @@ eth.getBalance('0x85d918c2B7F172d033D190152AEc58709Fb6D048')
 # The balance of this account in ether is about 1.059eth.
 ```
 
-## Stopping and restarting your node {#stopping-and-restarting-your-node}
+## Остановка и перезапуск вашего узла {# stop-and-restarting-your-node}
 
-You can stop your node at any time. If you want to restart the node, Geth will take a few seconds or minutes to re-synchronize (downloading the blocks and/or block headers from where it left off when the node last stopped running). If any of the above instructions aren’t working, the first thing you should do is try restarting your node.
+Вы можете остановить свой узел в любой момент. Если вы хотите перезапустить узел, Geth потребуется несколько секунд или минут для повторной синхронизации (загрузка блоков и / или заголовков блоков с того места, где он остановился, когда узел в последний раз прекратил работу). Если какие-либо из приведенных выше инструкций не работают, первое, что вам следует сделать, это попробовать перезапустить узел.
 
-If you are interested in running an Ethereum full node, it is generally best to do so from a dedicated machine with good network connectivity, rather than from a personal computer. Here is a guide to running a node with AWS (this is a little outdated and the referenced AMIs are no longer recent or available, so you might have to do some Googling): [How to run a node on AWS](https://medium.com/mercuryprotocol/how-to-run-an-ethereum-node-on-aws-a8774ed3acf6)
+Если вы заинтересованы в запуске полного узла Ethereum, как правило, лучше делать это с выделенного компьютера с хорошим сетевым подключением, чем с персонального компьютера. Вот руководство по запуску узла с AWS (оно немного устарело, а ссылочные AMI уже не актуальны и не доступны, поэтому вам, возможно, придется поискать в Google): [Как запустить узел на AWS](https://medium.com/mercuryprotocol/how-to-run-an-ethereum-node-on-aws-a8774ed3acf6)
