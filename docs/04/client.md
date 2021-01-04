@@ -69,13 +69,13 @@
 
 ### Проекты
 
-[**Select a client and follow their instructions**](#clients)
+[**Выберите клиента и следуйте его инструкциям**](#clients)
 
-**ethnode -** **_Run an Ethereum node (Geth or Parity) for local development._**
+**ethnode - ** ** _ Запуск узла Ethereum (Geth или Parity) для локальной разработки._**
 
 - [GitHub](https://github.com/vrde/ethnode)
 
-**DAppNode -** **_An operating system for running Web3 nodes, including Ethereum, on a dedicated machine._**
+**DAppNode - ** ** _ Операционная система для запуска узлов Web3, включая Ethereum, на выделенной машине._**
 
 - [dappnode.io](https://dappnode.io)
 
@@ -100,7 +100,7 @@ Ethereum разработан, чтобы предлагать разных кл
 
 В этой таблице представлены различные клиенты. Все они активно работают, обслуживаются и проходят [Тесты клиентов](https://github.com/ethereum/tests).
 
-| Клиент                                                       |Язык | Операционная система     | Сети                                   | Стратегии синхронизации         | Государственная обрезка  |
+| Клиент                                                       |Язык | Операционная система     | Сети                                   | Стратегии синхронизации         | State pruning  |
 | ------------------------------------------------------------ | -------- | --------------------- | ------------------------------------------ | ----------------------- | --------------- |
 | [Geth](https://geth.ethereum.org/)                           | Go       | Linux, Windows, macOS | Mainnet, Görli, Rinkeby, Ropsten           | Fast, Full              | Archive, Pruned |
 | [OpenEthereum](https://github.com/openethereum/openethereum) | Rust     | Linux, Windows, macOS | Mainnet, Kovan, Ropsten, and more          | Warp, Full              | Archive, Pruned |
