@@ -1,13 +1,13 @@
 ## Узлы и клиенты
 Обзор узлов Ethereum и клиентского программного обеспечения, а также то, как настроить узел и почему вам следует это сделать.
 
-For Ethereum to work in a decentralized way it needs a distributed network of nodes that can verify blocks and transaction data. You need an application, known as a client, on your device to "run" a node.
+Для децентрализованной работы Ethereum необходима распределенная сеть узлов, которые могут проверять блоки и данные транзакций. Вам необходимо приложение, известное как клиент, на вашем устройстве для «запуска» узла.
 
-## Prerequisites {#prerequisites}
+## Предварительные требования
 
 Вы должны понять концепцию децентрализованной сети, прежде чем углубляться в нее и запускать собственный экземпляр клиента Ethereum. Взгляните на наше [Введение в Ethereum](/en/developers/docs/intro-to-ethereum/).
 
-## Что такое узлы и клиенты? {# какие-узлы-и-клиенты}
+## Что такое узлы и клиенты? 
 
 «Узел» относится к программному обеспечению, известному как клиент. Клиент - это реализация Ethereum, которая проверяет все транзакции в каждом блоке, обеспечивая безопасность сети и точность данных.
 
@@ -18,45 +18,45 @@ For Ethereum to work in a decentralized way it needs a distributed network of no
 ![Eth1x client](./client-diagram.png)
 Упрощенная диаграмма возможностей клиента Ethereum.
 
-## Типы узлов {# типы-узлов}
+## Типы узлов 
 
 Если вы хотите запустить свой собственный узел, вы должны понимать, что существуют разные типы узлов, которые по-разному потребляют данные. Фактически, клиенты могут запускать 3 разных типа узлов - легкий, полный и архивный. Существуют также варианты различных стратегий синхронизации, которые позволяют сократить время синхронизации. Под синхронизацией понимается то, насколько быстро он может получить самую свежую информацию о состоянии Ethereum.
 
-### Полный узел {# полный узел}
+### Полный узел 
 
 - Хранит полные данные блокчейна.
 - Участвует в проверке блоков, проверяет все блоки и состояния.
 - Все состояния могут быть получены из полного узла.
 - Обслуживает сеть и предоставляет данные по запросу.
 
-### Световой узел {# световой узел}
+### Световой узел 
 
 - Сохраняет цепочку заголовков и запрашивает все остальное.
 - Может проверять достоверность данных относительно корней состояния в заголовках блоков.
 - Полезно для устройств с малой емкостью, таких как встроенные устройства или мобильные телефоны, которые не могут позволить себе хранить гигабайты данных блокчейна.
 
-### Archive node {#archive-node}
+### Узел архива
 
-- Stores everything kept in the full node and builds an archive of historical states. Needed if you want to query something like an account balance at block #4,000,000.
-- These data represent units of terabytes which makes archive nodes less attractive for average users but can be handy for services like block explorers, wallet vendors, and chain analytics.
+- Хранит все, что хранится в полном узле, и создает архив исторических состояний. Требуется, если вы хотите запросить что-то вроде баланса счета в блоке # 4,000,000.
+- Эти данные представляют собой единицы терабайт, что делает узлы архива менее привлекательными для обычных пользователей, но может быть полезно для таких сервисов, как исследователи блоков, поставщики кошельков и аналитика цепочек.
 
-Syncing clients in any mode other than archive will result in pruned blockchain data. This means, there is no archive of all historical state but the full node is able to build them on demand.
+Синхронизация клиентов в любом режиме, кроме архива, приведет к удалению данных блокчейна. Это означает, что нет архива всего исторического состояния, но полный узел может создавать их по запросу.
 
-## Why should I run an Ethereum node? {#why-should-i-run-an-ethereum-node}
+## Зачем мне запускать узел Ethereum?
 
-Running a node allows you to trustlessly and privately use Ethereum while supporting the ecosystem.
+Запуск узла позволяет вам конфиденциально и конфиденциально использовать Ethereum, поддерживая экосистему.
 
-### Benefits to you {#benefits-to-you}
+### Польза для вас
 
-Running your own node enables you to use Ethereum in a truly private, self-sufficient and trustless manner. You don't need to trust the network because you can verify the data yourself with your client. "Don't trust, verify" is a popular blockchain mantra.
+Запуск собственного узла позволяет вам использовать Ethereum по-настоящему конфиденциально, самодостаточно и без доверия. Вам не нужно доверять сети, потому что вы можете сами проверить данные со своим клиентом. «Не доверяйте, проверяйте» - популярная мантра блокчейна.
 
-- Your node verifies all the transactions and blocks against consensus rules by itself. This means you don’t have to rely on any other nodes in the network or fully trust them.
-- You won't have to leak your addresses and balances to random nodes. Everything can be checked with your own client.
-- Your dapp can be more secure and private if you use your own node. [Metamask](https://metamask.io), [MyEtherWallet](https://myetherwallet.com) and some other wallets can be easily pointed to your own local node.
+- Ваш узел самостоятельно проверяет все транзакции и блокирует их на соответствие правилам консенсуса. Это означает, что вам не нужно полагаться на какие-либо другие узлы в сети или полностью им доверять.
+- Вам не придется сливать адреса и балансы на случайные узлы. Все можно проверить у собственного клиента.
+- Ваше децентрализованное приложение может быть более безопасным и конфиденциальным, если вы используете свой собственный узел. [Metamask](https://metamask.io), [MyEtherWallet](https://myetherwallet.com) а некоторые другие кошельки можно легко указать на ваш собственный локальный узел.
 
 ![How you access Ethereum via your application and nodes](./nodes.png)
 
-### Network benefits {#network-benefits}
+### Network benefits 
 
 A diverse set of nodes is important for Ethereum’s health, security and operational resiliency.
 
