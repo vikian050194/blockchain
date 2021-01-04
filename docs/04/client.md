@@ -1,12 +1,5 @@
-## Client
-
----
-title: Nodes and clients
-description: An overview of Ethereum nodes and client software, plus how to set up a node and why you should do it.
-lang: en
-sidebar: true
-sidebarDepth: 2
----
+## Узлы и клиенты
+Обзор узлов Ethereum и клиентского программного обеспечения, а также то, как настроить узел и почему вам следует это сделать.
 
 For Ethereum to work in a decentralized way it needs a distributed network of nodes that can verify blocks and transaction data. You need an application, known as a client, on your device to "run" a node.
 
