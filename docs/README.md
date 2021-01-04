@@ -40,7 +40,7 @@
 
 **Занятие #5**
 
-- TODO [syncmode](05/sync.md)
+- [Syncmode](05/sync.md)
 - TODO Сети бывают [разные](05/protocol.md): PoW, PoS и PoA
 - [Тестовая](05/testnet.md) сеть из нескольких узлов
 - [Транзакция](05/transaction.md) и тестовая сеть
