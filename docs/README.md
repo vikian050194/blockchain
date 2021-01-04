@@ -31,7 +31,7 @@
 
 **Занятие #4**
 
-- TODO [Клиенты](04/client.md) Etherium сети
+- [Клиенты](04/client.md) Etherium сети
 - Клиент [Geth](04/geth.md)
 - TODO [Транзакция](04/transaction.md) на IPC провайдере
 - Компилятор [solc](04/solc.md)
