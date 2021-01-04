@@ -56,18 +56,18 @@
 
 ![How you access Ethereum via your application and nodes](./nodes.png)
 
-### Network benefits 
+### Сетевые преимущества
 
-A diverse set of nodes is important for Ethereum’s health, security and operational resiliency.
+Разнообразный набор узлов важен для работоспособности, безопасности и отказоустойчивости Ethereum.
 
-- They provide access to blockchain data for lightweight clients that depend on it. In high peaks of usage, there need to be enough full nodes to help light nodes sync. Light nodes don't store the whole blockchain, instead they verify data via the [state roots in block headers](/en/developers/docs/blocks/#block-anatomy). They can request more information from blocks if they need it.
-- Full nodes enforce the proof-of-work consensus rules so they can’t be tricked into accepting blocks that don't follow them. This provides extra security in the network because if all the nodes were light nodes, which don't do full verification, miners could attack the network and, for example, create blocks with higher rewards.
+- Они предоставляют доступ к данным блокчейна для легковесных клиентов, которые от него зависят. При высоких пиках использования должно быть достаточно полных узлов, чтобы облегчить синхронизацию узлов. Легкие узлы не хранят всю цепочку блоков, вместо этого они проверяют данные через [Корни состояний в заголовках блоков](/en/developers/docs/blocks/#block-anatomy). Они могут запросить дополнительную информацию у блоков, если им это нужно.
+- Полные узлы обеспечивают соблюдение правил консенсуса доказательства выполнения работы, поэтому их нельзя обманом заставить принимать блоки, которые им не соответствуют. Это обеспечивает дополнительную безопасность в сети, потому что, если бы все узлы были легкими узлами, не выполняющими полную проверку, майнеры могли бы атаковать сеть и, например, создавать блоки с более высоким вознаграждением.
 
-If you run a full node, the whole Ethereum network benefits from it.
+Если вы запустите полный узел, от этого выиграет вся сеть Ethereum.
 
-## Running your own node {#running-your-own-node}
+## Запуск собственного узла
 
-### Projects {#projects}
+### Проекты
 
 [**Select a client and follow their instructions**](#clients)
 
@@ -79,26 +79,26 @@ If you run a full node, the whole Ethereum network benefits from it.
 
 - [dappnode.io](https://dappnode.io)
 
-### Resources {#resources}
+### Ресурсы
 
-- [Running Ethereum Full Nodes: A Complete Guide](https://medium.com/coinmonks/running-ethereum-full-nodes-a-guide-for-the-barely-motivated-a8a13e7a0d31) _Nov 7, 2019 - Justin Leroux_
-- [Node Configuration Cheat Sheet](https://dev.to/5chdn/ethereum-node-configuration-modes-cheat-sheet-25l8) _Jan 5, 2019 - Afri Schoeden_
-- [How To Install & Run a Geth Node](https://www.quiknode.io/guides/infrastructure/how-to-install-and-run-a-geth-node) _Oct 4, 2020 - Sahil Sen_
-- [How To Install & Run a OpenEthereum (fka. Parity) Node](https://www.quiknode.io/guides/infrastructure/how-to-run-a-openethereum-ex-parity-client-node) _Sept 22, 2020 - Sahil Sen_
+- [Запуск полных узлов Ethereum: полное руководство](https://medium.com/coinmonks/running-ethereum-full-nodes-a-guide-for-the-barely-motivated-a8a13e7a0d31) _Ноя 7, 2019 - Джастин Леру_
+- [Памятка по настройке узла](https://dev.to/5chdn/ethereum-node-configuration-modes-cheat-sheet-25l8) _Янв 5, 2019 - Афри Шоден_
+- [Как установить и запустить узел Geth](https://www.quiknode.io/guides/infrastructure/how-to-install-and-run-a-geth-node) _Окт 4, 2020 - Сахил Сен_
+- [Как установить и запустить узел OpenEthereum (fka. Parity)](https://www.quiknode.io/guides/infrastructure/how-to-run-a-openethereum-ex-parity-client-node) _Сент 22, 2020 - Сахил Сен_
 
-## Alternatives {#alternatives}
+## Альтернативы 
 
-Running your own node can be difficult and you don’t always need to run your own instance. In this case, you can use a third party API provider like [Infura](https://infura.io), [Alchemy](https://alchemyapi.io), or [QuikNode](https://www.quiknode.io). Alternatively [ArchiveNode](https://archivenode.io/) is a community-funded Archive node that hopes to bring archive data on the Ethereum blockchain to independent developers who otherwise couldn't afford it.
+Запуск собственного узла может быть трудным, и вам не всегда нужно запускать собственный экземпляр. В этом случае вы можете использовать стороннего поставщика API, например [Infura](https://infura.io), [Alchemy](https://alchemyapi.io), или [QuikNode](https://www.quiknode.io). Альтернативно [ArchiveNode](https://archivenode.io/) - это финансируемый сообществом узел Archive, который надеется предоставить архивные данные о блокчейне Ethereum независимым разработчикам, которые иначе не могли себе этого позволить.
 
-If somebody runs an Ethereum node with a public API in your community, you can point your light wallets (like MetaMask) to a community node [via Custom RPC](https://metamask.zendesk.com/hc/en-us/articles/360015290012-Using-a-Local-Node) and gain more privacy than with some random tusted third party.
+Если кто-то запускает узел Ethereum с общедоступным API в вашем сообществе, вы можете указать свои легкие кошельки (например, MetaMask) на узел сообщества [через Custom RPC](https://metamask.zendesk.com/hc/en-us/articles/360015290012-Using-a-Local-Node) и получить больше конфиденциальности, чем с какой-либо случайной доверенной третьей стороной.
 
-On the other hand, if you run a client, you can share it with your friends who might need it.
+С другой стороны, если вы запустите клиент, вы можете поделиться им с друзьями, которым он может понадобиться.
 
-## Clients {#clients}
+## Клиенты {#clients}
 
-Ethereum is designed to offer different clients, developed by different teams using different programming languages. This makes the network stronger and more diverse. The ideal goal is to achieve diversity without any client dominating to reduce any single points of failure.
+Ethereum разработан, чтобы предлагать разных клиентов, разработанных разными командами с использованием разных языков программирования. Это делает сеть более сильной и разнообразной. Идеальная цель - добиться разнообразия без доминирования клиентов, чтобы уменьшить количество точек отказа.
 
-This table summarises the different clients. All of them are actively worked on, maintained, and pass [client tests](https://github.com/ethereum/tests).
+В этой таблице представлены различные клиенты. Все они активно работают, обслуживаются и проходят [Тесты клиентов](https://github.com/ethereum/tests).
 
 | Client                                                       | Language | Operating systems     | Networks                                   | Sync strategies         | State pruning   |
 | ------------------------------------------------------------ | -------- | --------------------- | ------------------------------------------ | ----------------------- | --------------- |
@@ -108,85 +108,85 @@ This table summarises the different clients. All of them are actively worked on,
 | [Besu](https://pegasys.tech/solutions/hyperledger-besu/)     | Java     | Linux, Windows, macOS | Mainnet, Rinkeby, Ropsten, and Görli       | Fast, Full              | Archive, Pruned |
 | [Trinity](https://trinity.ethereum.org/)                     | Python   | Linux, macOS          | Mainnet, Görli, Ropsten, and more          | Full, Beam, Fast/Header | Archive         |
 
-For more on supported networks, read up on [Ethereum networks](/en/developers/docs/networks/).
+Подробнее о поддерживаемых сетях читайте в [Сети Ethereum](/en/developers/docs/networks/).
 
-### Advantages of different implementations {#advantages-of-different-implementations}
+### Преимущества разных реализаций
 
-Each client has unique use cases and advantages, so you should choose one based on your own preferences. Diversity allows implementations to be focused on different features and user audiences. You may want to choose a client based on features, support, programming language, or licences.
+У каждого клиента есть уникальные варианты использования и преимущества, поэтому вам следует выбирать один исходя из своих предпочтений. Разнообразие позволяет сфокусировать реализации на различных функциях и аудиториях пользователей. Вы можете выбрать клиента на основе функций, поддержки, языка программирования или лицензий.
 
-#### Go Ethereum {#geth}
+#### Перейти к Ethereum
 
-Go Ethereum (Geth for short) is one of the original implementations of the Ethereum protocol. Currently, it is the most widespread client with the biggest user base and variety of tooling for users and developers. It is written in Go, fully open source and licensed under the GNU LGPL v3.
+Go Ethereum (сокращенно Geth) - одна из оригинальных реализаций протокола Ethereum. В настоящее время это самый распространенный клиент с самой большой пользовательской базой и множеством инструментов для пользователей и разработчиков. Он написан на Go, с полностью открытым исходным кодом и под лицензией GNU LGPL v3.
 
-#### OpenEthereum {#openethereum}
+#### OpenEthereum
 
-OpenEthereum is a fast, feature-rich and advanced CLI-based Ethereum client. It's built to provide the essential infrastructure for speedy and reliable services which require fast synchronisation and maximum up-time. OpenEthereum’s goal is to be the fastest, lightest, and most secure Ethereum client. It provides a clean, modular codebase for:
+OpenEthereum - это быстрый, многофункциональный и продвинутый клиент Ethereum на основе интерфейса командной строки. Он создан для обеспечения необходимой инфраструктуры для быстрых и надежных услуг, требующих быстрой синхронизации и максимального времени безотказной работы. Цель OpenEthereum - стать самым быстрым, легким и безопасным клиентом Ethereum. Он предоставляет чистую модульную кодовую базу для:
 
-- easy customisation.
-- light integration into services or products.
-- minimal memory and storage footprint.
+- легкая настройка.
+- легкая интеграция в услуги или продукты.
+- минимальный объем памяти и хранилища.
 
-OpenEthereum is developed using the cutting-edge Rust programming language and licensed under the GPLv3.
+OpenEthereum разработан с использованием передового языка программирования Rust и распространяется под лицензией GPLv3.
 
-#### Nethermind {#nethermind}
+#### Nethermind
 
-Nethermind is an Ethereum implementation created with the C# .NET tech stack, running on all major platforms including ARM. It offers great performance with:
+Nethermind - это реализация Ethereum, созданная с помощью технического стека C # .NET, работающая на всех основных платформах, включая ARM. Он предлагает отличную производительность с:
 
-- an optimized virtual machine
-- state access
-- networking and rich features like Prometheus/Graphana dashboards, seq enterprise logging support, JSON RPC tracing, and analytics plugins.
+- оптимизированная виртуальная машина
+- государственный доступ
+- сетевые функции и разнообразные функции, такие как панели управления Prometheus / Graphana, поддержка корпоративного журналирования seq, трассировка JSON RPC и плагины для аналитики.
 
-Nethermind also has [detailed documentation](https://docs.nethermind.io), strong dev support, an online community and 24/7 support available for premium users.
+В Nethermind также есть [Подробная документация](https://docs.nethermind.io), сильная поддержка разработчиков, онлайн-сообщество и круглосуточная поддержка, доступная для премиум-пользователей.
 
-#### Besu {#besu}
+#### Besu
 
-Hyperledger Besu is an enterprise-grade Ethereum client for public and permissioned networks. It runs all of the Ethereum mainnet features, from tracing to GraphQL, has extensive monitoring and is supported by ConsenSys, both in open community channels and through commercial SLAs for enterprises. It is written in Java and is Apache 2.0 licensed.
+Hyperledger Besu - это клиент Ethereum корпоративного уровня для общедоступных и разрешенных сетей. Он поддерживает все функции основной сети Ethereum, от трассировки до GraphQL, имеет обширный мониторинг и поддерживается ConsenSys как в открытых каналах сообщества, так и в рамках коммерческих соглашений об уровне обслуживания для предприятий. Он написан на Java и имеет лицензию Apache 2.0.
 
-### Sync modes {#sync-modes}
+### Режимы синхронизации
 
-- Full – downloads all blocks (including headers, transactions and receipts) and generates the state of the blockchain incrementally by executing every block.
-- Fast (Default) – downloads all blocks (including headers, transactions and receipts), verifies all headers, and downloads the state and verifies it against the headers.
-- Light – downloads all block headers, block data, and verifies some randomly.
-- Warp sync – Every 5,000 blocks, nodes will take a consensus-critical snapshot of that block’s state. Any node can fetch these snapshots over the network, enabling a fast sync. [More on Warp](https://openethereum.github.io/wiki/Warp-Sync-Snapshot-Format)
-- Beam sync – A sync mode that allows you to get going faster. It doesn't require long waits to sync, instead it back-fills data over time. [More on Beam](https://medium.com/@jason.carver/intro-to-beam-sync-a0fd168be14a)
-- Header sync – you can use a trusted checkpoint to start syncing from a more recent header and then leave it up to a background process to fill the gaps eventually
+- Полный - загружает все блоки (включая заголовки, транзакции и квитанции) и генерирует состояние цепочки блоков постепенно, выполняя каждый блок.
+- Быстро (по умолчанию) - загружает все блоки (включая заголовки, транзакции и квитанции), проверяет все заголовки, загружает состояние и сверяет его с заголовками.
+- Light - загружает все заголовки блоков, данные блоков и проверяет некоторые случайным образом.
+- Синхронизация деформации - каждые 5000 блоков узлы будут делать критически важный моментальный снимок состояния этого блока. Любой узел может получать эти снимки по сети, обеспечивая быструю синхронизацию. [Подробнее](https://openethereum.github.io/wiki/Warp-Sync-Snapshot-Format)
+- Beam sync - режим синхронизации, позволяющий работать быстрее. Для синхронизации не требуется долгого ожидания, вместо этого он заполняет данные с течением времени. [Подробнее о Beam](https://medium.com/@jason.carver/intro-to-beam-sync-a0fd168be14a)
+- Header sync – вы можете использовать надежную контрольную точку, чтобы начать синхронизацию с более свежего заголовка, а затем оставить это для фонового процесса, чтобы в конечном итоге заполнить пробелы
 
-You define the type of sync when you get set up, like so:
+Вы определяете тип синхронизации при настройке, например:
 
-**Setting up light sync in [GETH](https://geth.ethereum.org/)**
+**Настройка light sync in [GETH](https://geth.ethereum.org/)**
 
 `geth --syncmode "light"`
 
-**Setting up header sync in Trinity**
+**Настройка header sync in Trinity**
 
 `trinity --sync-from-checkpoint eth://block/byhash/0xa65877df954e1ff2012473efee8287252eee956c0d395a5791f1103a950a1e21?score=15,835,269,727,022,672,760,774`
 
-## Hardware {#hardware}
+## Оборудование
 
-Hardware requirements differ by client but generally are not that high since the node just needs to stay synced. Don't confuse it with mining which requires much more computing power. Sync time and performance do improve with more powerful hardware however. Depending on your needs and wants, Ethereum can be run on your computer, home server, single-board computers or virtual private servers in the cloud.
+Требования к оборудованию различаются в зависимости от клиента, но обычно не так высоки, так как узел просто должен оставаться синхронизированным. Не путайте это с майнингом, который требует гораздо большей вычислительной мощности. Однако время синхронизации и производительность улучшаются с более мощным оборудованием. В зависимости от ваших потребностей и желаний Ethereum можно запустить на вашем компьютере, домашнем сервере, одноплатных компьютерах или виртуальных частных серверах в облаке.
 
-An easy way to run your own node is using 'plug and play' boxes like [DAppNode](https://dappnode.io/). It provides hardware for running clients and applications that depend on them with a simple user interface.
+Самый простой способ запустить собственный узел - использовать блоки Plug and Play, такие как [DAppNode](https://dappnode.io/). Он предоставляет оборудование для запуска клиентов и приложений, которые зависят от них, с простым пользовательским интерфейсом.
 
-### Requirements {#requirements}
+### Требования
 
-Before installing any client, please ensure your computer has enough resources to run it. Minimum and recommended requirements can be found below, however the key part is the disk space. Syncing the Ethereum blockchain is very input/output intensive. It is best to have a solid-state drive (SSD). To run an Ethereum client on HDD, you will need at least 8GB of RAM to use as a cache.
+Перед установкой любого клиента убедитесь, что на вашем компьютере достаточно ресурсов для его запуска. Ниже приведены минимальные и рекомендуемые требования, однако ключевой частью является дисковое пространство. Синхронизация блокчейна Ethereum требует очень больших затрат на ввод / вывод. Лучше всего иметь твердотельный накопитель (SSD). Чтобы запустить клиент Ethereum на жестком диске, вам потребуется не менее 8 ГБ ОЗУ для использования в качестве кеша.
 
-#### Minimum requirements {#recommended-specifications}
+#### Минимальные требования
 
-- CPU with 2+ cores
-- 4 GB RAM minimum with an SSD, 8 GB+ if you have an HDD
-- 8 MBit/s bandwidth
+- ЦП с 2+ ядрами
+- Минимум 4 ГБ ОЗУ с SSD, 8 ГБ +, если у вас жесткий диск
+- пропускная способность 8 Мбит / с
 
-#### Recommended specifications {#recommended-specifications}
+#### Рекомендуемые характеристики
 
-- Fast CPU with 4+ cores
-- 16 GB+ RAM
-- Fast SSD with at least 500 GB free space
-- 25+ MBit/s bandwidth
+- Быстрый процессор с 4+ ядрами
+- 16 ГБ + RAM
+- Быстрый SSD с не менее 500 ГБ свободного места
+- Пропускная способность 25+ Мбит / с
 
-Depending on which software and sync mode are you going to use, hundreds of GBs of disk space is need. Approximate numbers and growth can be found below.
+В зависимости от того, какое программное обеспечение и режим синхронизации вы собираетесь использовать, потребуются сотни ГБ дискового пространства. Приблизительные цифры и рост можно найти ниже.
 
-| Client       | Disk size (fast sync) | Disk size (full archive) |
+| Клиент      | Размер диска (fast sync) | Размер диска (full archive) |
 | ------------ | --------------------- | ------------------------ |
 | Geth         | 400GB+                | 4.7TB+                   |
 | OpenEthereum | 280GB+                | 4.6TB+                   |
@@ -197,23 +197,23 @@ Depending on which software and sync mode are you going to use, hundreds of GBs 
 
 ![A chart showing that GB needed for an archive sync is trending up](./archive-sync.png)
 
-These charts show how storage requirements are always changing. For the most up-to-date data for Geth and Parity, see the [full sync data](https://etherscan.io/chartsync/chaindefault) and [archive sync data](https://etherscan.io/chartsync/chainarchive).
+Эти диаграммы показывают, как постоянно меняются требования к хранилищу. Самые свежие данные для Geth и Parity см. В [Полная синхронизация данных](https://etherscan.io/chartsync/chaindefault) и [Архив данных синхронизации](https://etherscan.io/chartsync/chainarchive).
 
-### Ethereum on a single-board computer {#ethereum-on-a-single-board-computer}
+### Ethereum на одноплатном компьютере
 
-The most convenient and cheap way of running Ethereum node is to use a single board computer with ARM architecture like Raspberry Pi. [Ethereum on ARM](https://twitter.com/EthereumOnARM) provides images of Geth, Parity, Nethermind, and Besu clients. Here's a simple tutorial on [how to build and setup an ARM client](/en/developers/tutorials/run-node-raspberry-pi/).
+Самый удобный и дешевый способ запустить узел Ethereum - использовать одноплатный компьютер с архитектурой ARM, такой как Raspberry Pi. [Ethereum на ARM](https://twitter.com/EthereumOnARM) предоставляет изображения клиентов Geth, Parity, Nethermind и Besu. Вот простое руководство по [Как создать и настроить клиент ARM](/en/developers/tutorials/run-node-raspberry-pi/).
 
-Small, affordable and efficient devices like these are ideal for running a node at home.
+Такие небольшие, доступные и эффективные устройства идеально подходят для работы узла дома.
 
-## Eth2 clients {#eth2-clients}
+## Клиенты Eth2
 
-There are new clients to support the [Eth2 upgrades](/eth2/beacon-chain/). They will run the Beacon Chain and support the new [proof-of-stake](/developers/docs/consensus-mechanisms/pos/) consensus mechanism.
+Появились новые клиенты для поддержки [Обновлений Eth2](/eth2/beacon-chain/). ни будут управлять Beacon Chain и поддерживать новый [proof-of-stake](/developers/docs/consensus-mechanisms/pos/) механизм консенсуса.
 
-[View Eth2 clients](/eth2/get-involved/#clients).
+[Просмотр клиентов Eth2](/eth2/get-involved/#clients).
 
-## Further reading {#further-reading}
+## Дальнейшее чтение
 
-There is a lot of instructions and information about Ethereum clients on the internet, here are few that might be helpful.
+В Интернете есть много инструкций и информации о клиентах Ethereum, вот некоторые из них, которые могут быть полезны.
 
 - [Ethereum 101 - Part 2 - Understanding Nodes](https://kauri.io/ethereum-101-part-2-understanding-nodes/48d5098292fd4f11b251d1b1814f0bba/a) _– Wil Barnes, 13 February 2019_
 - [Running Ethereum Full Nodes: A Guide for the Barely Motivated](https://medium.com/@JustinMLeroux/running-ethereum-full-nodes-a-guide-for-the-barely-motivated-a8a13e7a0d31) _– Justin Leroux, 7 November 2019_
@@ -221,12 +221,8 @@ There is a lot of instructions and information about Ethereum clients on the int
 - [Analyzing the hardware requirements to be an Ethereum full validated node](https://medium.com/coinmonks/analyzing-the-hardware-requirements-to-be-an-ethereum-full-validated-node-dc064f167902) _– Albert Palau, 24 September 2018_
 - [Running a Hyperledger Besu Node on the Ethereum Mainnet: Benefits, Requirements, and Setup](https://pegasys.tech/running-a-hyperledger-besu-node-on-the-ethereum-mainnet-benefits-requirements-and-setup/) _– Felipe Faraggi, 7 May 2020_
 
-## Related topics {#related-topics}
 
-- [Blocks](/en/developers/docs/blocks/)
-- [Networks](/en/developers/docs/networks/)
+## Связанные руководства 
 
-## Related tutorials {#related-tutorials}
-
-- [Running a Node with Geth](/developers/tutorials/run-light-node-geth/) _– How to download, install and run Geth. Covering syncmodes, the Javascript console, and more._
-- [Turn your Raspberry Pi 4 into an Eth 1.0 or Eth 2.0 node just by flashing the MicroSD card – Installation guide](/developers/tutorials/run-node-raspberry-pi/) _– Flash your Raspberry Pi 4, plug in an ethernet cable, connect the SSD disk and power up the device to turn the Raspberry Pi 4 into a full Ethereum 1.0 node or an Ethereum 2.0 node (beacon chain / validator)._
+- [Запуск узла с помощью Geth](/developers/tutorials/run-light-node-geth/) _– Как скачать, установить и запустить Geth. Охватывает режимы синхронизации, консоль Javascript и многое другое._
+- [Превратите свой Raspberry Pi 4 в узел Eth 1.0 или Eth 2.0, просто прошив карту MicroSD - Руководство по установке](/developers/tutorials/run-node-raspberry-pi/) _– Перепрограммируйте Raspberry Pi 4, подключите кабель Ethernet, подключите SSD-диск и включите устройство, чтобы превратить Raspberry Pi 4 в полноценный узел Ethereum 1.0 или узел Ethereum 2.0 (цепочка маяков / валидатор)._
