@@ -5,35 +5,35 @@ For Ethereum to work in a decentralized way it needs a distributed network of no
 
 ## Prerequisites {#prerequisites}
 
-You should understand the concept of a decentralized network before diving deeper and running your own instance of an Ethereum client. Take a look at our [introduction to Ethereum](/en/developers/docs/intro-to-ethereum/).
+Вы должны понять концепцию децентрализованной сети, прежде чем углубляться в нее и запускать собственный экземпляр клиента Ethereum. Взгляните на наше [Введение в Ethereum](/en/developers/docs/intro-to-ethereum/).
 
-## What are nodes and clients? {#what-are-nodes-and-clients}
+## Что такое узлы и клиенты? {# какие-узлы-и-клиенты}
 
-"Node" refers to a piece of software known as a client. A client is an implementation of Ethereum that verifies all transactions in each block, keeping the network secure and the data accurate.
+«Узел» относится к программному обеспечению, известному как клиент. Клиент - это реализация Ethereum, которая проверяет все транзакции в каждом блоке, обеспечивая безопасность сети и точность данных.
 
-You can see a real-time view of the Ethereum network by looking at this [map of nodes](https://etherscan.io/nodetracker).
+Вы можете увидеть сеть Ethereum в реальном времени, посмотрев на эту [Карту узлов](https://etherscan.io/nodetracker).
 
-Many [implementations of Ethereum clients](/developers/docs/nodes-and-clients/#clients) exist in a variety of languages. What these client implementations have in common is they all follow a formal specification. This specification dictates how the Ethereum network and blockchain functions.
+Многие [Реализации клиентов Ethereum](/developers/docs/nodes-and-clients/#clients) существуют на разных языках. Общим для этих клиентских реализаций является то, что все они следуют формальной спецификации. Эта спецификация определяет, как функционирует сеть Ethereum и блокчейн.
 
 ![Eth1x client](./client-diagram.png)
-Simplified diagram of what Ethereum client features.
+Упрощенная диаграмма возможностей клиента Ethereum.
 
-## Node types {#node-types}
+## Типы узлов {# типы-узлов}
 
-If you want to run your own node, you should understand that there are different types of node that consume data differently. In fact, clients can run 3 different types of node - light, full and archive. There are also options of different sync strategies which enables faster synchronization time. Synchronization refers to how quickly it can get the most up-to-date information on Ethereum's state.
+Если вы хотите запустить свой собственный узел, вы должны понимать, что существуют разные типы узлов, которые по-разному потребляют данные. Фактически, клиенты могут запускать 3 разных типа узлов - легкий, полный и архивный. Существуют также варианты различных стратегий синхронизации, которые позволяют сократить время синхронизации. Под синхронизацией понимается то, насколько быстро он может получить самую свежую информацию о состоянии Ethereum.
 
-### Full node {#full-node}
+### Полный узел {# полный узел}
 
-- Stores full blockchain data.
-- Participates in block validation, verifies all blocks and states.
-- All states can be derived from a full node.
-- Serves the network and provides data on request.
+- Хранит полные данные блокчейна.
+- Участвует в проверке блоков, проверяет все блоки и состояния.
+- Все состояния могут быть получены из полного узла.
+- Обслуживает сеть и предоставляет данные по запросу.
 
-### Light node {#light-node}
+### Световой узел {# световой узел}
 
-- Stores the header chain and requests everything else.
-- Can verify the validity of the data against the state roots in the block headers.
-- Useful for low capacity devices, such as embedded devices or mobile phones, which can't afford to store gigabytes of blockchain data.
+- Сохраняет цепочку заголовков и запрашивает все остальное.
+- Может проверять достоверность данных относительно корней состояния в заголовках блоков.
+- Полезно для устройств с малой емкостью, таких как встроенные устройства или мобильные телефоны, которые не могут позволить себе хранить гигабайты данных блокчейна.
 
 ### Archive node {#archive-node}
 
