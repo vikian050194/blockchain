@@ -17,7 +17,7 @@ Memory декларирует используемые переменные, Cal
 3)Сalldata-вызов стирается после завершения транзакции
 
 Пример контракта с использованием Memory и Calldata
-
+``` solidity
 pragma solidity 0.5.11;
 
 contract Test {
@@ -34,9 +34,9 @@ contract Test {
         // cannot modify or return _exampleString
     }
 }
-
+```
 Пример смарт-контракта с использованием Calldata и хранением вспомогательных значений в Memory
-
+``` solidity
 pragma solidity ^0.4.18;
 contract Bank {
     address owner;
@@ -71,7 +71,7 @@ contract Bank {
             selfdestruct(owner);
     }
 }
-
+```
 calldata вызовы бывают следующие:
 public - все имеют доступ
 
