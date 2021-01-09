@@ -6,7 +6,7 @@ pragma solidity >=0.4.22 <0.7.0;
  */
 contract Elections {
     
-     // председамель выборной комиисии - владелец контракта
+     // председатель выборной комиисии - владелец контракта
      // определяет состав кандидатов и голосующих
     address private chairman;
     
@@ -28,48 +28,66 @@ contract Elections {
     mapping(address => Voter) public voters;
     Candidate[] public candidates;
     
-    // конструктор создаем голосования, председателем назначается владелец контракта
+    // конструктор создаем голосования
+    // председателем назначается владелец контракта
     constructor() public {
         chairman = msg.sender;
         voters[chairman].count = 1;
     }
-    
-    // добавить кандидата, может вызвать только председатель
+
+    /** 
+    * @title addCandidate - добавить кандидата
+    * @dev добавить кандидата может только председатель
+    * @param _name - имя кандидата
+    */
     function addCandidate(string _name) public {
-        require(msg.sender == chairman,
-            "Only the chairman can add a candidate");
+        // проверка что вызывающий метод является председателем
+        require(msg.sender == chairman, "Only the chairman can add a candidate");
+
         // не удалось проверить уникальность имени кандидата тк в solidity нет нормального сравнения строк
+
+        // добавляем кандидата в массив
         candidates.push(Candidate({
 				name: _name,
 				votes: 0
 			}));
     }
     
-    // добавить Избирателя, может вызвать только председатель
+    /** 
+    * @title addVoter - добавить избирателя
+    * @dev добавить избирателя может только председатель
+    * @param _voter - адресс избирателя
+    */
     function addVoter(address _voter) public {
-        require(msg.sender == chairman,
-            "Only chairperson can give right to vote.");
+        require(msg.sender == chairman, "Only chairperson can give right to vote.");
         // проверяем что избиратель еще не голосовал
-        require(!voters[_voter].didVote,
-            "The voter already voted.");
+        require(!voters[_voter].didVote, "The voter already voted.");
         // проверяем что не имеет голоса
         require(voters[_voter].count == 0);
         // выдаем избирателю один голос
         voters[_voter].count = 1;
     }
     
-    // передача голоса другому избирателю
-    function DelegateVote(address to) public {
+    /** 
+    * @title delegateVote - передать голос
+    * @dev передает права голоса другому избирателю
+    * @param to - адресс избирателя которому отдается голос
+    */
+    function delegateVote(address to) public {
+        // получаем данные о избирателе, вызвавщем функцию
         Voter storage sender = voters[msg.sender];
+        // проверем что он еще не отдал голос
         require(!sender.didVote, "You already voted.");
+        // проверяем что он не передает голос сам себе
         require(to != msg.sender, "Self-delegation is disallowed.");
 
+        // проверяем что при передаче голосов не произошол цикл
         while (voters[to].delegate != address(0)) {
             to = voters[to].delegate;
-
-            // We found a loop in the delegation, not allowed.
             require(to != msg.sender, "Found loop in delegation.");
         }
+
+        // обновляем состояние избирателей
         sender.didVote = true;
         sender.delegate = to;
         Voter storage delegate_ = voters[to];
@@ -83,7 +101,7 @@ contract Elections {
     }
 
     // отдать голос
-    function Vote(uint number_candidate) public {
+    function vote(uint number_candidate) public {
         Voter storage sender = voters[msg.sender];
         require(sender.count != 0, "Has no right to vote");
         require(!sender.didVote, "Already voted.");
