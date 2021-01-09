@@ -31,7 +31,7 @@
 
 **Занятие #4**
 
-- TODO [Клиенты](04/client.md) Etherium сети
+- [Клиенты](04/client.md) Etherium сети
 - Клиент [Geth](04/geth.md)
 - TODO [Транзакция](04/transaction.md) на IPC провайдере
 - Компилятор [solc](04/solc.md)
@@ -40,7 +40,7 @@
 
 **Занятие #5**
 
-- TODO [syncmode](05/sync.md)
+- [Syncmode](05/sync.md)
 - TODO Сети бывают [разные](05/protocol.md): PoW, PoS и PoA
 - [Тестовая](05/testnet.md) сеть из нескольких узлов
 - [Транзакция](05/transaction.md) и тестовая сеть
