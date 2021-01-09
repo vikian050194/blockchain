@@ -16,9 +16,9 @@ contract SimpleStorePhrase {
   function get() public constant returns (uint) {
     return value;
   }
-  function PhraseCounter() public
+  function PhraseCounter(string incide) public
    {
-       count = count + 1;
+          count = count + 1;
    }
 
    
