@@ -26,6 +26,7 @@
 - TODO [Языки](03/contract.md) смарт-контрактов 
 - TODO Язык смарт-контрактов [Solidity](03/solidity.md)
 - TODO Online IDE [Remix](03/remix.md)
+- Online IDE [ethfiddle](03/ethfiddle.md)
 - TODO [Storage](03/storage.md)
 - TODO [Coin](03/coin.md)
 
