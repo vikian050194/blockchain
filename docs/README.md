@@ -2,34 +2,36 @@
 
 Основы технологии блокчейн. Заметки к практическим занятиям.
 
-**Занятие #0**
+**Занятие #0: вводное**
 
-- Промышленная [разработка](00/development.md)
+- [А кто же нынче студент?](00/questions.md)
+- [Промышленная разработка](00/development.md)
 - [Тестирование](00/testing.md)
-- TODO Git: [happy path](00/git.md)
+- [Git: happy path](00/git.md)
 - [OS](00/os.md)
 - [Python](00/python.md)
+- [IDE](00/ide.md)
 
-**Занятие #1**
+**Занятие #1: что есть что и понеслась**
 
 - TODO [Blockchain](01/blockchain.md)
 - TODO [Etherium](01/etherium.md) 
-- TODO [Web3](01/web3.md) и провайдеры
-
-**Занятие #2**
-
-- Полезный вспомогательный [класс](02/wrapper.md)
-- Пример [транзакции](02/transaction.md) на тестовом провайдере
-- TODO [Gas](02/gas.md) и прочее
-
-**Занятие #3**
-
 - TODO [Языки](03/contract.md) смарт-контрактов 
 - TODO Язык смарт-контрактов [Solidity](03/solidity.md)
 - TODO Online IDE [Remix](03/remix.md)
 - Online IDE [ethfiddle](03/ethfiddle.md)
 - TODO [Storage](03/storage.md)
 - TODO [Coin](03/coin.md)
+
+**Занятие #2: обернём в питона**
+
+- TODO [Web3](01/web3.md) и провайдеры
+- Полезный вспомогательный [класс](02/wrapper.md)
+- Пример [транзакции](02/transaction.md) на тестовом провайдере
+
+**Занятие #3**
+
+- TODO [Gas](02/gas.md) и прочее
 
 **Занятие #4**
 
@@ -53,6 +55,11 @@
 - TODO [Майнинг](06/mining.md)
 - TODO JSON-RPC: вызываем методы curl'ом
 - ???
+
+**Задачки**
+
+- Хранилище: [описание](tasks/storage.md) и [контракт](../contracts/storage.sol)
+- Монета: [описание](tasks/coin.md) и [контракт](../contracts/coin.sol)
 
 **Задачи на экзамен**
 
