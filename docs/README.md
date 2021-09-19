@@ -4,7 +4,8 @@
 
 **Занятие #0**
 
-- TODO Промышленная [разработка](00/development.md)
+- Промышленная [разработка](00/development.md)
+- [Тестирование](00/testing.md)
 - TODO Git: [happy path](00/git.md)
 - [OS](00/os.md)
 - [Python](00/python.md)

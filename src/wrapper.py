@@ -1,8 +1,9 @@
+import os
+import random
+
 from web3 import Web3
 from web3.middleware import geth_poa_middleware
 from solcx import compile_source
-import random
-import os
 
 
 def connect_via_test():
