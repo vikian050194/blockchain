@@ -14,7 +14,7 @@
 
 **Занятие #1: что есть что и понеслась**
 
-- TODO [Blockchain](01/blockchain.md)
+- [Blockchain](01/blockchain.md)
 - TODO [Etherium](01/etherium.md) 
 - TODO [Языки](03/contract.md) смарт-контрактов 
 - TODO Язык смарт-контрактов [Solidity](03/solidity.md)
