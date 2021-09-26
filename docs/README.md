@@ -15,23 +15,25 @@
 **Занятие #1: что есть что и понеслась**
 
 - [Blockchain](01/blockchain.md)
-- TODO [Etherium](01/etherium.md) 
-- TODO [Языки](03/contract.md) смарт-контрактов 
-- TODO Язык смарт-контрактов [Solidity](03/solidity.md)
-- TODO Online IDE [Remix](03/remix.md)
-- Online IDE [ethfiddle](03/ethfiddle.md)
-- TODO [Storage](03/storage.md)
-- TODO [Coin](03/coin.md)
+- [Etherium](01/etherium.md) 
+- [Языки](01/contract.md) смарт-контрактов 
+- Язык смарт-контрактов [Solidity](01/solidity.md)
+- Online IDE [Remix](01/remix.md)
+- Online IDE [ethfiddle](01/ethfiddle.md)
+- [Storage](tasks/storage.md)
+- [Coin](tasks/coin.md)
 
 **Занятие #2: обернём в питона**
 
-- TODO [Web3](01/web3.md) и провайдеры
+- [Accounts](02/accounts.md)
+- [Gas](02/gas.md) и прочее
+- [Web3](02/web3.md) и провайдеры
 - Полезный вспомогательный [класс](02/wrapper.md)
 - Пример [транзакции](02/transaction.md) на тестовом провайдере
 
-**Занятие #3**
+**Занятие #3: тестирование**
 
-- TODO [Gas](02/gas.md) и прочее
+- TODO Тестирование
 
 **Занятие #4**
 

@@ -1,6 +1,6 @@
 ## Remix
 
-[Link](https://remix.ethereum.org/)
+[Ссылка](https://remix.ethereum.org/)
 
 [Чей-то](https://kauri.io/#communities/Getting%20started%20with%20dapp%20development/remix-ide-your-first-smart-contract/) гайд
 
