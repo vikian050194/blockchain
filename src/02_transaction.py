@@ -1,5 +1,6 @@
 from wrapper import get_test_wrapper
 
+
 w = get_test_wrapper()
 
 w.check_connection()
