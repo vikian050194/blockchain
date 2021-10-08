@@ -1,4 +1,16 @@
 site_name: Blockchain
 site_url: https://vikian050194.github.io/blockchain/
+repo_url: https://github.com/vikian050194/blockchain/
+# nav:
+#     - Home: '../'
+#     - Занятия: '/lessons/'
+#     - Задачки: tasks.md
+#     - Экзамен: exam.md
 theme:
     name: readthedocs
+    locale: ru
+markdown_extensions:
+    - toc:
+        permalink: '#'
+        baselevel: 1
+        separator: "_"
