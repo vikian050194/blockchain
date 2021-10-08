@@ -1,16 +1,56 @@
 site_name: Blockchain
 site_url: https://vikian050194.github.io/blockchain/
 repo_url: https://github.com/vikian050194/blockchain/
-# nav:
-#     - Home: '../'
-#     - Занятия: '/lessons/'
-#     - Задачки: tasks.md
-#     - Экзамен: exam.md
+nav:
+    - Экзамен: exam.md
+    - Занятия:
+        - '0. Вводное':
+            - Вопросики: 00/questions.md
+            - Промышленная разработка: 00/development.md
+            - Тестирование: 00/testing.md
+            - Git: 00/git.md
+            - OS: 00/os.md
+            - Python: 00/python.md
+            - IDE': 00/ide.md
+        - '1. Что есть что':
+            - Blockchain: 01/blockchain.md
+            - Etherium: 01/etherium.md
+            - Языки смарт-контрактов: 01/contract.md 
+            - Solidity: 01/solidity.md
+            - Online IDE Remix: 01/remix.md
+            - Online IDE ethfiddle: 01/ethfiddle.md
+            - Контракт Storage: tasks/storage.md
+            - Контракт Coin: tasks/coin.md
+        - '2. Обернём в питона':
+            - Accounts: 02/accounts.md
+            - Gas и прочее: 02/gas.md
+            - Web3 и провайдеры: 02/web3.md
+            - Обёртка (пышка): 02/wrapper.md
+            - Пример транзакции: 02/transaction.md
+            - Домашка: 02/homework.md
+        - '3. Гошная нода':
+            - Протоколы: 03/protocol.md
+            - TODO Клиенты Etherium сети: 03/client.md 
+            - Geth: 03/geth.md
+            - Тестовая сеть: testnet.md
+            - Пример транзакции: 03/transaction.md
+            - Домашка: 03/homework.md
+            # - Получение аккаунтов пира:
+        - '4. Сеть':
+            - TODO Syncmode: sync.md
+            - Компилятор solc: solc.md
+            - Контракт Storage: tasks/storage.md
+            - Контракт Coin: tasks/coin.md
+        - '5. Тестирование':
+            - TODO Тестирование: 05/testing.md
+        - '6. Майнинг':
+            - TODO Майнинг: 06/mining.md
+    - Задачки: tasks.md
 theme:
     name: readthedocs
     locale: ru
 markdown_extensions:
     - toc:
         permalink: '#'
-        baselevel: 1
+        baselevel: 2
         separator: "_"

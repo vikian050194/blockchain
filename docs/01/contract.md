@@ -1,4 +1,4 @@
-## Contract
+# Contract
 
 [Что-то](https://kauri.io/#collections/Ethereum%20101/ethereum-101-part-5-the-smart-contract/) не очень толковое
 

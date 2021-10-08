@@ -1,4 +1,4 @@
-## Solidity
+# Solidity
 
 [GitHub](https://github.com/ethereum/solidity)
 

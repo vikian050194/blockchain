@@ -1,4 +1,4 @@
-## Git: happy path
+# Git
 
 0. [Регистрируемся][github-signup-url] на GitHub
 1. [Настраиваем][github-ssh-url] доступ по SSH
