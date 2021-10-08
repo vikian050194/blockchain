@@ -1,0 +1,32 @@
+name: Build and deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        id: checkout_code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        id: install_dependencies
+        run: pip3 install -Iv mkdocs==1.2.2
+
+      - name: Build project
+        id: build_project
+        run: mkdocs build
+
+      - name: Push to gh-pages
+        if: success()
+        uses: crazy-max/ghaction-github-pages@v2
+        with:
+          target_branch: gh-pages
+          build_dir: site
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
