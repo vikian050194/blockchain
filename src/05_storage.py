@@ -1,7 +1,5 @@
-from web3 import Web3
-from solcx import compile_source
-import random
 import os
+import random
 import wrapper
 
 
@@ -14,7 +12,7 @@ latest_block = w.get_block('latest')
 CONTRACT_SOL = 'contracts/storage.sol'
 CONTRACT_NAME = 'SimpleStorage'
 
-path_to_first_node = 'node1/keystore'
+path_to_first_node = 'sandbox/node1/keystore'
 onlyfiles = [os.path.join(path_to_first_node, f) for f in os.listdir(path_to_first_node) if os.path.isfile(os.path.join(path_to_first_node, f))]
 
 PRIVATE_KEY_FILE=onlyfiles[0]

@@ -1,5 +1,5 @@
 # Directories of nodes, like node1, node2 and so on
-node*
+sandbox/node*
 
 *.json
 

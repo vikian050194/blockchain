@@ -41,6 +41,7 @@ nav:
             - Компилятор solc: 04/solc.md
             - Контракт Storage: tasks/storage.md
             - Контракт Coin: tasks/coin.md
+            - Домашка: 04/homework.md
         - '5. Тестирование':
             - TODO Тестирование: 05/testing.md
         - '6. Майнинг':
