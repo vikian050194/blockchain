@@ -37,8 +37,8 @@ nav:
             - Домашка: 03/homework.md
             # - Получение аккаунтов пира:
         - '4. Сеть':
-            - TODO Syncmode: sync.md
-            - Компилятор solc: solc.md
+            - TODO Syncmode: 04/sync.md
+            - Компилятор solc: 04/solc.md
             - Контракт Storage: tasks/storage.md
             - Контракт Coin: tasks/coin.md
         - '5. Тестирование':
