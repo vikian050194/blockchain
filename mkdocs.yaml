@@ -3,7 +3,11 @@ site_url: https://vikian050194.github.io/blockchain/
 repo_url: https://github.com/vikian050194/blockchain/
 nav:
     - Экзамен: exam.md
-    - Задачки: tasks/
+    - Задачки:
+        - Список: tasks/index.md
+        - Coin: tasks/coin.md
+        - Storage: tasks/storage.md
+        - Elections: tasks/elections.md
     - Занятия:
         - '0. Вводное':
             - Вопросики: 00/questions.md
@@ -54,6 +58,8 @@ theme:
     - navigation.tabs
     - navigation.instant
 markdown_extensions:
+    - pymdownx.snippets:
+        check_paths: true
     - toc:
         permalink: true
         baselevel: 3

@@ -6,7 +6,9 @@
 
 ## Код
 
-[Ссылка](/contracts/coin.sol)
+```
+--8<-- "contracts/coin.sol"
+```
 
 ## Сделать
 
