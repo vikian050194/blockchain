@@ -143,6 +143,7 @@ ERROR[11-29|16:12:09.629] Failed to create Parity chain spec       err="unsuppor
 INFO [11-29|16:12:09.629] Saved genesis chain spec                 client=harmony path=genesis-harmony.json
 ```
 Для выхода из `puppeth` жмём `Ctrl+C`
+
 Далее удалим `genesis-harmony.json`, т.к. он нам не нужен
 ```
 rm genesis-harmony.json
@@ -175,13 +176,13 @@ geth --datadir=node2 init genesis.json
 > touch node1/command node2/command
 
 ```
-geth --nousb --datadir=$pwd --syncmode=full --port=30310 --miner.gasprice=0 --miner.gastarget=470000000000 --http --http.addr=localhost --http.port=8545 --http.api admin,eth,miner,net,txpool,personal,web3 --mine --allow-insecure-unlock --unlock=0x0000000000000000000000000000000000000001 --password=password --nodiscover --verbosity=4 console 2>geth.log
+geth --nousb --datadir=$pwd --syncmode=full --port=30310 --miner.gasprice=0 --miner.gastarget=470000000000 --http --http.addr=localhost --http.port=8545 --http.api admin,eth,miner,net,txpool,personal,web3 --mine --miner.etherbase=0x0000000000000000000000000000000000000001 --allow-insecure-unlock --unlock=0x0000000000000000000000000000000000000001 --password=password --nodiscover --verbosity=4 console 2>geth.log
 ```
 
 И для второго
 
 ```
-geth --nousb --datadir=$pwd --syncmode=full --port=30311 --miner.gasprice=0 --miner.gastarget=470000000000 --http --http.addr=localhost --http.port=8546 --http.api admin,eth,miner,net,txpool,personal,web3 --mine --allow-insecure-unlock --unlock=0x0000000000000000000000000000000000000002 --password=password --nodiscover --verbosity=4 console 2>geth.log
+geth --nousb --datadir=$pwd --syncmode=full --port=30311 --miner.gasprice=0 --miner.gastarget=470000000000 --http --http.addr=localhost --http.port=8546 --http.api admin,eth,miner,net,txpool,personal,web3 --mine --miner.etherbase=0x0000000000000000000000000000000000000002 --allow-insecure-unlock --unlock=0x0000000000000000000000000000000000000002 --password=password --nodiscover --verbosity=4 console 2>geth.log
 ```
 
 > Если хочется запустить "в фоновом режиме", то надо дописать перед всей командой `nohup` и удалить `console` из ключей. Но для того, чтобы воспользоваться консолью придётся делать `attach`.

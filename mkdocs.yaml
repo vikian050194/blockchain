@@ -48,10 +48,13 @@ nav:
             - TODO Майнинг: 06/mining.md
     - Задачки: tasks.md
 theme:
-    name: readthedocs
+    name: material
     locale: ru
+    features:
+    - navigation.tabs
+    - navigation.instant
 markdown_extensions:
     - toc:
-        permalink: '#'
-        baselevel: 2
+        permalink: true
+        baselevel: 3
         separator: "_"

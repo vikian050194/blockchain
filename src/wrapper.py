@@ -10,7 +10,7 @@ def connect_via_test():
     return Web3(Web3.EthereumTesterProvider())
 
 
-def connect_via_ipc(rpc_address='data/geth.ipc'):
+def connect_via_ipc(rpc_address='sandbox/node1/geth.ipc'):
     return Web3(Web3.IPCProvider(rpc_address))
 
 

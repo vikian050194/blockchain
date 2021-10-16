@@ -16,7 +16,7 @@ jobs:
 
       - name: Install dependencies
         id: install_dependencies
-        run: pip3 install -Iv mkdocs==1.2.2
+        run: pip3 install mkdocs==1.2.2 mkdocs-material==7.3.3
 
       - name: Build project
         id: build_project

@@ -1,6 +1,7 @@
-import wrapper
+from wrapper import get_http_wrapper
 
-w = wrapper.get_http_wrapper(poa=True)
+
+w = get_http_wrapper(poa=True)
 
 w.check_connection()
 
@@ -9,7 +10,7 @@ latest_block = w.get_block('latest')
 assert len(w.accounts) == 1
 
 [alice_account] = w.accounts
-bob_account = "0xE77fA0F3ad4969F81b0B1210d67F68Fbf8203D90"
+bob_account = "0x22B77216a071f44605709ec5762512f8C68ed83B"
 
 alice_balance_before = w.get_balance(alice_account)
 bob_balance_before = w.get_balance(bob_account)
