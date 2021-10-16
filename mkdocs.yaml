@@ -20,7 +20,7 @@ nav:
         - '1. Что есть что':
             - Blockchain: 01/blockchain.md
             - Etherium: 01/etherium.md
-            - Языки смарт-контрактов: 01/contract.md 
+            - Языки смарт-контрактов: 01/contract.md
             - Solidity: 01/solidity.md
             - Online IDE Remix: 01/remix.md
             - Online IDE ethfiddle: 01/ethfiddle.md
@@ -35,7 +35,7 @@ nav:
             - Домашка: 02/homework.md
         - '3. Гошная нода':
             - Протоколы: 03/protocol.md
-            - TODO Клиенты Etherium сети: 03/client.md 
+            - TODO Клиенты Etherium сети: 03/client.md
             - Geth: 03/geth.md
             - Тестовая сеть: testnet.md
             - Пример транзакции: 03/transaction.md
@@ -57,6 +57,17 @@ theme:
     features:
     - navigation.tabs
     - navigation.instant
+    palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
 markdown_extensions:
     - pymdownx.snippets:
         check_paths: true
