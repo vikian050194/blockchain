@@ -3,6 +3,7 @@ site_url: https://vikian050194.github.io/blockchain/
 repo_url: https://github.com/vikian050194/blockchain/
 nav:
     - Экзамен: exam.md
+    - Задачки: tasks/
     - Занятия:
         - '0. Вводное':
             - Вопросики: 00/questions.md
@@ -46,7 +47,6 @@ nav:
             - TODO Тестирование: 05/testing.md
         - '6. Майнинг':
             - TODO Майнинг: 06/mining.md
-    - Задачки: tasks.md
 theme:
     name: material
     locale: ru
