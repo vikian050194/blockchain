@@ -1,7 +1,5 @@
 # Geth
 
-[Документация](https://geth.ethereum.org/) по Geth
-
 [Medium](https://medium.com/@chim/ethereum-how-to-setup-a-local-test-node-with-initial-ether-balance-using-geth-974511ce712)
 
 ## Установка

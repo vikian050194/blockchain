@@ -17,6 +17,10 @@ contract Coin {
         minter = msg.sender;
     }
 
+    function get(address account) public view returns (uint) {
+        return balances[account];
+    }
+
     // Sends an amount of newly created coins to an address
     // Can only be called by the contract creator
     function mint(address receiver, uint amount) public {
