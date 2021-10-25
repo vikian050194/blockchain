@@ -1,8 +1,8 @@
 import solcx
 
-# versions = solcx.get_installable_solc_versions()
+versions = solcx.get_installable_solc_versions()
 
-# print(versions)
+print(versions)
 
 # solcx.install_solc("0.8.9")
 

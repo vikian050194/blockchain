@@ -1,9 +1,9 @@
 import os
 import random
-import wrapper
+from ..wrapper import get_http_wrapper
 
 
-w = wrapper.get_http_wrapper(poa=True)
+w = get_http_wrapper(poa=True)
 
 w.check_connection()
 

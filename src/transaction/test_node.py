@@ -1,4 +1,4 @@
-from wrapper import get_test_wrapper
+from ..wrapper import get_test_wrapper
 
 
 w = get_test_wrapper()
