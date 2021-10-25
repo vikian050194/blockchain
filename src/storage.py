@@ -1,6 +1,6 @@
 import os
 import random
-from ..wrapper import get_http_wrapper
+from wrapper import get_http_wrapper
 
 
 w = get_http_wrapper(poa=True)

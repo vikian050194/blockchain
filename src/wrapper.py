@@ -3,15 +3,17 @@ from web3.middleware import geth_poa_middleware
 from solcx import compile_source
 
 
-def connect_via_test():
+def connect_via_test(node_index):
     return Web3(Web3.EthereumTesterProvider())
 
 
-def connect_via_ipc(rpc_address='sandbox/node1/geth.ipc'):
+def connect_via_ipc(node_index):
+    rpc_address=f'sandbox/node{node_index}/geth.ipc'
     return Web3(Web3.IPCProvider(rpc_address))
 
 
-def connect_via_http(rpc_address='http://localhost:8545', timeout=120):
+def connect_via_http(node_index, timeout=120):
+    rpc_address=f'http://localhost:854{4 + node_index}'
     return Web3(Web3.HTTPProvider(rpc_address, request_kwargs={'timeout': timeout}))
 
 
@@ -125,14 +127,14 @@ def get_wrapper(w3, poa):
         w3.middleware_onion.inject(geth_poa_middleware, layer=0)
     return Wrapper(w3)
 
-def get_test_wrapper(poa=False):
-    return get_wrapper(connect_via_test(), poa)
+def get_test_wrapper(poa=False, node_index=1):
+    return get_wrapper(connect_via_test(node_index), poa)
 
-def get_http_wrapper(poa=False):
-    return get_wrapper(connect_via_http(), poa)
+def get_http_wrapper(poa=False, node_index=1):
+    return get_wrapper(connect_via_http(node_index), poa)
 
-def get_ipc_wrapper(poa=False):
-    return get_wrapper(connect_via_ipc(), poa) 
+def get_ipc_wrapper(poa=False, node_index=1):
+    return get_wrapper(connect_via_ipc(node_index), poa) 
     
 
 __all__ = [
