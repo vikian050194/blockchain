@@ -24,8 +24,7 @@ nav:
             - Solidity: 01/solidity.md
             - Online IDE Remix: 01/remix.md
             - Online IDE ethfiddle: 01/ethfiddle.md
-            - Контракт Storage: tasks/storage.md
-            - Контракт Coin: tasks/coin.md
+            - Домашка: 01/homework.md
         - '2. Обернём в питона':
             - Accounts: 02/accounts.md
             - Gas и прочее: 02/gas.md
@@ -40,17 +39,16 @@ nav:
             - Тестовая сеть: testnet.md
             - Пример транзакции: 03/transaction.md
             - Домашка: 03/homework.md
-            # - Получение аккаунтов пира:
         - '4. Сеть':
             - TODO Syncmode: 04/sync.md
             - Компилятор solc: 04/solc.md
-            - Контракт Storage: tasks/storage.md
-            - Контракт Coin: tasks/coin.md
             - Домашка: 04/homework.md
         - '5. Тестирование':
             - TODO Тестирование: 05/testing.md
+            - Домашка: 05/homework.md
         - '6. Майнинг':
             - TODO Майнинг: 06/mining.md
+            - Домашка: 06/homework.md
 theme:
     name: material
     locale: ru
