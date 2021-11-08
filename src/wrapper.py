@@ -3,16 +3,16 @@ from web3.middleware import geth_poa_middleware
 from solcx import compile_source
 
 
-def connect_via_test(node_index):
+def connect_via_test(node_index: int):
     return Web3(Web3.EthereumTesterProvider())
 
 
-def connect_via_ipc(node_index):
+def connect_via_ipc(node_index: int):
     rpc_address=f'sandbox/node{node_index}/geth.ipc'
     return Web3(Web3.IPCProvider(rpc_address))
 
 
-def connect_via_http(node_index, timeout=120):
+def connect_via_http(node_index: int, timeout: int = 120):
     rpc_address=f'http://localhost:854{4 + node_index}'
     return Web3(Web3.HTTPProvider(rpc_address, request_kwargs={'timeout': timeout}))
 
@@ -27,7 +27,7 @@ class Wrapper():
 
 
     def send_transaction(self, address_from, address_to, value):
-        return self.w3.eth.sendTransaction({
+        return self.w3.eth.send_transaction({
             'from': address_from,
             'to': address_to,
             'value': value
@@ -106,20 +106,20 @@ class Wrapper():
 
     
     def get_transaction(self, tx_hash):
-        return self.w3.eth.getTransaction(tx_hash)
+        return self.w3.eth.get_transaction(tx_hash)
 
     
     def get_private_key(self, encrypted_key, password='1234'):
         return self.w3.eth.account.decrypt(encrypted_key, password)
 
     def get_block(self, index):
-        return self.w3.eth.getBlock(index)
+        return self.w3.eth.get_block(index)
 
     def get_block_number(self):
         return self.w3.eth.blockNumber
 
     def get_balance(self, account):
-        return self.w3.eth.getBalance(account)
+        return self.w3.eth.get_balance(account)
 
 
 def get_wrapper(w3, poa):

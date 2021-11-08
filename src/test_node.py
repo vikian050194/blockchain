@@ -25,7 +25,7 @@ bob_balance_after = w.get_balance(bob_account)
 
 first_block = w.get_block('latest')
 
-gas_price = 1
+gas_price = tx.gasPrice
 fee = first_block.gasUsed * gas_price
 
 assert fee == 21000
