@@ -21,7 +21,6 @@ contract Elections {
     }
 
     struct Voter {
-        // bool didVote;
         uint count;
         address delegate;
     }
@@ -64,30 +63,57 @@ contract Elections {
         // require(msg.sender == organizer);
         require(state == State.Registration, "state is not Registration");
         candidates.push(Candidate({name: name, votes: 0}));
-        // candidates.push(Candidate({name: name, votes: 0, account: msg.sender}));
     }
 
     function registerVoter(address account) public {
-        // require(msg.sender == organizer);
         require(state == State.Registration, "state is not Registration");
-        // voters[account].didVote = false;
         voters[account].count = 1;
-        // candidates.push(Candidate({name: name, votes: 0, account: msg.sender}));
+    }
+
+    function registerMeAsVoter() public {
+        registerVoter(msg.sender);
     }
 
     function delegate(address to) public {
         require(state == State.Delegating, "state is not Delegating");
         require(0 != voters[msg.sender].count, "voter has used all available votes");
-        voters[msg.sender].count -= 1;
-        voters[to].count += 1;
+        require(to != msg.sender, "Self-delegation is disallowed.");
+
+        Voter storage sender_account = voters[msg.sender];
+
+        while (voters[to].delegate != address(0)) {
+            to = voters[to].delegate;
+            require(to != msg.sender, "Found loop in delegation.");
+        }
+
+        Voter storage delegate_account = voters[to];
+
+        delegate_account.count += sender_account.count;
+        sender_account.count = 0;
+        sender_account.delegate = to;
     }
 
     function vote(uint candidateIndex) public {
         require(state == State.Voting, "state is not Voting");
         require(0 <= candidateIndex && candidateIndex < candidates.length, "candidate index out of range");
         require(0 != voters[msg.sender].count, "voter has used all available votes");
+
         candidates[candidateIndex].votes += voters[msg.sender].count;
-        // voters[msg.sender].didVote = true;
         voters[msg.sender].count = 0;
+    }
+
+    function winnerName() public view returns (string memory name)
+    {
+        require(state == State.Finished, "state is not Finished");
+
+        uint maxVotes = 0;
+        uint winnerIndex = 0;
+        for (uint i = 0; i < candidates.length; i++) {
+            if (candidates[i].votes > maxVotes) {
+                maxVotes = candidates[i].votes;
+                winnerIndex = i;
+            }
+        }
+        name = candidates[winnerIndex].name;
     }
 }
