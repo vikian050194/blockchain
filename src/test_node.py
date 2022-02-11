@@ -1,7 +1,7 @@
-from wrapper import get_test_wrapper
+from wrapper import get_test_wrapper as get_wrapper
 
 
-w = get_test_wrapper()
+w = get_wrapper()
 
 w.check_connection()
 
