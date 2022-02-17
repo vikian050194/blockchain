@@ -36,7 +36,7 @@ nav:
             - Протоколы: 03/protocol.md
             - TODO Клиенты Etherium сети: 03/client.md
             - Geth: 03/geth.md
-            - Тестовая сеть: testnet.md
+            - Тестовая сеть: 03/testnet.md
             - Пример транзакции: 03/transaction.md
             - Домашка: 03/homework.md
         - '4. Сеть':
