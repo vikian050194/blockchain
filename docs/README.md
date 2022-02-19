@@ -9,13 +9,13 @@ virtualenv venv
 Для примеров необходимо два пакета
 
 ```bash
-pip install py-solc-x==1.1.0 web3[tester]==5.24.0
+pip install -r requirements.txt
 ```
 
 Для сборки документации используется mkdocs ([github][github-mkdocs-url], [site][site-mkdocs-url])
 
 ```bash
-pip install mkdocs==1.2.2 mkdocs-material==7.3.3
+pip install -r requirements-docs.txt
 ```
 
 Запускаем из корневой директории

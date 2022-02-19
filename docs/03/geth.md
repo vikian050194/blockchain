@@ -6,8 +6,14 @@
 
 Устанавливается так
 ```
-sudo apt-get install geth
+sudo add-apt-repository -y ppa:ethereum/ethereum
+sudo apt-get update
+sudo apt-get install ethereum
 ```
+
+Или просто сказать архив [тут](https://geth.ethereum.org/downloads/), выбрав последнюю версию `Geth + Tools`
+Извлечь надо в какую-нибудь директорию из PATH или залинковать туда же
+
 Проверяем версию
 ```
 geth version
