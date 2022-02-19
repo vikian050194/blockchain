@@ -1,0 +1,1440 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://vikian050194.github.io/blockchain/03/protocol/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.3">
+    
+    
+      
+        <title>Протоколы - Blockchain</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.5143246d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#blockchain" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Blockchain" class="md-header__button md-logo" aria-label="Blockchain" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Blockchain
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Протоколы
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/vikian050194/blockchain/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../exam/" class="md-tabs__link">
+      Экзамен
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tasks/" class="md-tabs__link">
+        Задачки
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../00/questions/" class="md-tabs__link md-tabs__link--active">
+        Занятия
+      </a>
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Blockchain" class="md-nav__button md-logo" aria-label="Blockchain" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Blockchain
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/vikian050194/blockchain/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exam/" class="md-nav__link">
+        Экзамен
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Задачки
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Задачки" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Задачки
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tasks/" class="md-nav__link">
+        Список
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tasks/coin/" class="md-nav__link">
+        Coin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tasks/storage/" class="md-nav__link">
+        Storage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tasks/elections/" class="md-nav__link">
+        Elections
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Занятия
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Занятия" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Занятия
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1">
+          0. Вводное
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="0. Вводное" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          0. Вводное
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00/questions/" class="md-nav__link">
+        Вопросики
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00/development/" class="md-nav__link">
+        Промышленная разработка
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00/testing/" class="md-nav__link">
+        Тестирование
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00/git/" class="md-nav__link">
+        Git
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00/os/" class="md-nav__link">
+        OS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00/python/" class="md-nav__link">
+        Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00/ide/" class="md-nav__link">
+        IDE'
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2">
+          1. Что есть что
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="1. Что есть что" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          1. Что есть что
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01/blockchain/" class="md-nav__link">
+        Blockchain
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01/etherium/" class="md-nav__link">
+        Etherium
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01/contract/" class="md-nav__link">
+        Языки смарт-контрактов
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01/solidity/" class="md-nav__link">
+        Solidity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01/remix/" class="md-nav__link">
+        Online IDE Remix
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01/ethfiddle/" class="md-nav__link">
+        Online IDE ethfiddle
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01/homework/" class="md-nav__link">
+        Домашка
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3">
+          2. Обернём в питона
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2. Обернём в питона" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          2. Обернём в питона
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02/accounts/" class="md-nav__link">
+        Accounts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02/gas/" class="md-nav__link">
+        Gas и прочее
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02/web3/" class="md-nav__link">
+        Web3 и провайдеры
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02/wrapper/" class="md-nav__link">
+        Обёртка (пышка)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02/transaction/" class="md-nav__link">
+        Пример транзакции
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02/homework/" class="md-nav__link">
+        Домашка
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4">
+          3. Гошная нода
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="3. Гошная нода" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          3. Гошная нода
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Протоколы
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Протоколы
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#blockchain" class="md-nav__link">
+    Протоколы blockchain
+  </a>
+  
+    <nav class="md-nav" aria-label="Протоколы blockchain">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proof_of_work_pow" class="md-nav__link">
+    Proof of Work (PoW)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proof_of_stake_pos" class="md-nav__link">
+    Proof of Stake (PoS)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proof_of_assignment_poa" class="md-nav__link">
+    Proof of Assignment (PoA)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proof_of_authority_poa" class="md-nav__link">
+    Proof of Authority (PoA)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protocols_of_etherium" class="md-nav__link">
+    Protocols of Etherium
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client/" class="md-nav__link">
+        TODO Клиенты Etherium сети
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../geth/" class="md-nav__link">
+        Geth
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../testnet/" class="md-nav__link">
+        Тестовая сеть
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../transaction/" class="md-nav__link">
+        Пример транзакции
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../homework/" class="md-nav__link">
+        Домашка
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" type="checkbox" id="__nav_3_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_5">
+          4. Сеть
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="4. Сеть" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          4. Сеть
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04/sync/" class="md-nav__link">
+        TODO Syncmode
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04/solc/" class="md-nav__link">
+        Компилятор solc
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04/homework/" class="md-nav__link">
+        Домашка
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6" type="checkbox" id="__nav_3_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_6">
+          5. Тестирование
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="5. Тестирование" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_6">
+          <span class="md-nav__icon md-icon"></span>
+          5. Тестирование
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05/testing/" class="md-nav__link">
+        TODO Тестирование
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05/homework/" class="md-nav__link">
+        Домашка
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_7" type="checkbox" id="__nav_3_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_7">
+          6. Майнинг
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="6. Майнинг" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_7">
+          <span class="md-nav__icon md-icon"></span>
+          6. Майнинг
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06/mining/" class="md-nav__link">
+        TODO Майнинг
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06/homework/" class="md-nav__link">
+        Домашка
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#blockchain" class="md-nav__link">
+    Протоколы blockchain
+  </a>
+  
+    <nav class="md-nav" aria-label="Протоколы blockchain">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proof_of_work_pow" class="md-nav__link">
+    Proof of Work (PoW)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proof_of_stake_pos" class="md-nav__link">
+    Proof of Stake (PoS)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proof_of_assignment_poa" class="md-nav__link">
+    Proof of Assignment (PoA)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proof_of_authority_poa" class="md-nav__link">
+    Proof of Authority (PoA)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protocols_of_etherium" class="md-nav__link">
+    Protocols of Etherium
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/vikian050194/blockchain/edit/master/docs/03/protocol.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  <h1>Протоколы</h1>
+                
+                <h3 id="blockchain">Протоколы blockchain<a class="headerlink" href="#blockchain" title="Permanent link">&para;</a></h3>
+<p><a href="https://ambcrypto.com/proof-of-assignment-poa-vs-proof-of-work-pow-and-proof-of-stake-pos/">ссылка 1</a>, <a href="https://medium.com/hackernoon/pos-pow-and-12-other-blockchain-protocols-you-didnt-know-about-3634b089d119">2</a> и <a href="https://manfred.life/blockchain-proof-ideas">3</a></p>
+<p><a href="https://geth.ethereum.org/docs/interface/private-network">geth</a></p>
+<h4 id="proof_of_work_pow">Proof of Work (PoW)<a class="headerlink" href="#proof_of_work_pow" title="Permanent link">&para;</a></h4>
+<p>PoW - принцип защиты сетевых систем от злоупотребления, основанный на необходимости выполнения на стороне клиента некоторой достаточно длительной работы, результат которой легко и быстро проверяется на стороне сервера. Главная особенность применяемых вычислений заключается в асимметрии затрат времени - они значительны на нахождение решения и весьма малы для проверки. Подобные схемы также известны как <code>client puzzle</code>, <code>computational puzzle</code> или <code>CPU pricing function</code>.</p>
+<p>Не следует путать этот способ защиты с капчами, которые предлагают задачи, лёгкие для человека, но трудные или вовсе неразрешимые для компьютера. Доказательство выполнения работы изначально ориентировано на нахождение решения по заранее известному алгоритму за некоторое конечное время, но для проверки полученного решения требуется относительно малое количество операций. Наибольшее распространение и развитие PoW-технологии получили в криптовалютных системах.</p>
+<p><strong>Преимущества</strong></p>
+<ol>
+<li>Основные его преимущества - защита от DoS-атак и низкое влияние доли криптовалюты в собственности у майнера на возможности добычи.</li>
+<li>PoW накладывает определенные ограничения на действия участников, поскольку для решения задачи требуются значительные усилия. Эффективная атака также требует больших вычислительных мощностей и продолжительных вычислений, поэтому она возможна, но невыгодна на фоне высоких затрат.</li>
+<li>Неважно, сколько денег у вас в кошельке - важно иметь большие вычислительные возможности для решения задач и формирования новых блоков, а значит, держатели больших капиталов не могут принимать решения за всю сеть.</li>
+</ol>
+<p><strong>Недостатки</strong></p>
+<ol>
+<li>Вероятность успешного создания следующего блока майнером прямо пропорциональна вычислительным мощностям, которыми он обладает, что приводит к постоянному наращиванию количества и качества оборудования каждого участника сети. Таким образом, майнинг с применением PoW алгоритмов требует чрезвычайно много электроэнергии. Поэтому PoW подход является не самым лучшим решением с точки зрения энергоэффективности.</li>
+<li>Результаты вычисления хеш-функций нигде, кроме как в самой сети, не нужны. С момента появления технологии сообщество пыталось придумать способ направить все вычислительные ресурсы сети на решение какой-либо полезной математической или промышленной задачи, но в чистом виде это не удалось реализовать.</li>
+<li>Системы на основе PoW являются чрезвычайно ресурсоёмкими. В 2013 году совокупная вычислительная мощность, затрачиваемая на PoW в сети Bitcoin, обогнала в 256 раз топ-500 самых мощных на тот год суперкомпьютеров в мире вместе взятых.</li>
+</ol>
+<p>Попытки избавиться от недостатков PoW привели к появлению PoS и многочисленных гибридных вариантов.</p>
+<h4 id="proof_of_stake_pos">Proof of Stake (PoS)<a class="headerlink" href="#proof_of_stake_pos" title="Permanent link">&para;</a></h4>
+<p>Proof-of-stake (PoS) - метод защиты в криптовалютах, при котором вероятность формирования участником очередного блока в блокчейне пропорциональна доле, оторую оставляют принадлежащие этому участнику расчётные единицы данной криптовалюты от их общего количества. Данный метод является альтернативой методу PoW, при котором вероятность создания очередного блока выше у обладателя более мощного оборудования.</p>
+<p>При использовании этого метода алгоритм формирования блока не зависит от мощности оборудования, но с большей вероятностью блок будет сформирован той учётной записью, у которой текущий баланс больше. Например, участник, владеющий 1% от суммарного количества, в среднем будет генерировать 1% новых блоков. На практике часто встречаются смешанные варианты формирования новых блоков. Например, оба метода PoW и PoS используются в криптовалютах Emerсoin, NovaCoin, YaCoin. В криптовалютах PeerCoin и Reddcoin метод PoW используется для первоначального распределения, а PoS — для подтверждения транзакций. В криптоплатформе Nxt и BlackCoin метод PoS используется на всех этапах.</p>
+<p><strong>Преимущества</strong></p>
+<ol>
+<li>Нет необходимости потреблять большое количество электроэнергии для защиты блокчейна. Например, Bitcoin и Ethereum вместе тратят более 1 миллиона долларов, в пересчете на электроэнергию, в день в рамках своих консенсусных механизмов.</li>
+<li>Из-за отсутствия необходимости потреблять большое количество энергии, снижаются траты участников. Следовательно, нет необходимости повышать количество единиц валюты для мотивации участников.</li>
+<li>Proof-of-stake позволяет использовать алгоритмы теории игр, чтобы эффективно противодействовать централизации.</li>
+</ol>
+<p><strong>Недостатки</strong></p>
+<ol>
+<li>Доказательство доли владения даёт дополнительную мотивацию к накапливанию средств в одних руках, что может приводить к централизации сети.</li>
+<li>Если образуется небольшая группа, которая сконцентрирует у себя достаточно большие средства, она сможет навязывать свои условия функционирования криптовалюты, с которыми будут несогласны большинство миноритариев, которые не контролируют форжинг.</li>
+</ol>
+<h4 id="proof_of_assignment_poa">Proof of Assignment (PoA)<a class="headerlink" href="#proof_of_assignment_poa" title="Permanent link">&para;</a></h4>
+<p>Механизм консенсуса - это отказоустойчивый алгоритм, который используется в распределенных компьютерных сетях и приложениях блокчейн для достижения необходимого согласия по единственному  значению данных или единственному состоянию сети среди децентрализованных процессов или многоагентных систем, таких как криптовалюты. Это также полезно для ведения учета и координации между рядом распределенных подключенных устройств, таких как Интернет вещей (IoT).</p>
+<p>Основные бытовые приборы, такие как пылесосы, стиральные машины и холодильники, а также другие широко используемые продукты бытовой электроники, такие как умные часы и принтеры, теперь оснащены передовыми микропроцессорами, микроконтроллерами и модулями памяти, которые совместимы с подключением к Интернету и друг другу - базовая концепция Интернета вещей. Это делает эти устройства пригодными для сбора, обработки и обмена данными в реальном времени с другими системами и сетями.</p>
+<p><strong>Преимущества</strong></p>
+<ol>
+<li>Бытовые устройства могут быть использованы для майнинга, предлагая реалистичное решение проблем масштабируемости и отложенной обработки транзакций, с которыми сталкиваются современные популярные криптовалютные сети.</li>
+<li>Владельцы устройств могут планировать, когда их устройства могут участвовать в майнинге во время простоя устройства.</li>
+<li>Владелец устройства может добровольно делиться или продавать данные, сгенерированные и обработанные их устройствами, для заработка криптовалют, поскольку эти данные могут быть полезны для разнообразной группы организаций, участвующих в исследованиях рынка, изучении моделей потребления и городского планирования.</li>
+<li>Наконец, низкое энергопотребление делает такой вклад в добычу полезных ископаемых достаточно экономичным занятием в зависимости от конфигурации сети и рабочего механизма.</li>
+</ol>
+<p><strong>Недостатки</strong></p>
+<p>Нет. Просто он отличается от двух предыдущих. Если найдёте, то обязательно сделайне MR с правкой.</p>
+<h4 id="proof_of_authority_poa">Proof of Authority (PoA)<a class="headerlink" href="#proof_of_authority_poa" title="Permanent link">&para;</a></h4>
+<p>Авторитет майнера может варьироваться от 0% до 100%. Изначально условия для всех валидаторов одинаковы. То есть, если вы станете валидатором, вы сможете оказывать большее влияние на сеть, чем любой крупный банк. Рейтинг строится на основе объема работы и уровня полномочий остальных майнеров. Каждая транзакция требует участия как минимум двух узлов с полномочиями выше, чем у исходного. Пример: если начальное влияние составляет 40%, то два других должны иметь от 40% и выше. И, следовательно, с Доказательством Права подписи майнинг невозможен. Одобренные влиятельные участники вовлечены в процесс транзакций и создания блоков, а значит, их возможности используются для подтверждения вообще всех операций. Это может значительно снизить затраты на обслуживание сети. По сравнению с PoW и PoS майнингом Proof of Authority более энергоэффективен, потому что майнинг в PoA-сети попросту невозможен.</p>
+<p><strong>Преимущества</strong></p>
+<ol>
+<li>Использование PoA исключает возможность атаки, поскольку валидаторы проверяются на этапе получения полномочий и являются надежными.</li>
+<li>По сравнению с другими механизмами поиска консенсуса это решение менее энергозатратно.</li>
+<li>Новый блок создается всего за 5 секунд, плата очень низкая, а масштабирование сети может происходить горизонтально, объединяя несколько сетей в одну.</li>
+<li>Быстрая обработка транзакций.</li>
+</ol>
+<p><strong>Недостатки</strong></p>
+<ol>
+<li>Так как при использовании PoA лишь ограниченный круг людей может участвовать в валидации блоков, децентрализация невозможна.</li>
+<li>Хотя PoA может использоваться в общедоступных блокчейнах, обычно он применяется в частных и требующих разрешения.</li>
+<li>Репутация не может всегда удерживать участников от злонамеренных действий. Если в результате мошеннических действий будет получено большее вознаграждение, чем авторитет, участник может нанести системе вред.</li>
+</ol>
+<h4 id="protocols_of_etherium">Protocols of Etherium<a class="headerlink" href="#protocols_of_etherium" title="Permanent link">&para;</a></h4>
+<ul>
+<li>ethash - это Proof of Work</li>
+<li>clique - это Proof of Authority</li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../../02/homework/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Домашка" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Домашка
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../client/" class="md-footer__link md-footer__link--next" aria-label="Next: TODO Клиенты Etherium сети" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              TODO Клиенты Etherium сети
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a>
+        
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.instant"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.8397ff9e.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f89c2efe.min.js"></script>
+      
+    
+  </body>
+</html>
